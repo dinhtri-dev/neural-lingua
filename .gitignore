@@ -29,3 +29,5 @@ config.local.h
 *.onnx
 *.h5
 *.keras
+test-results/
+playwright-report/

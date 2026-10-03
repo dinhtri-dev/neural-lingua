@@ -1,29 +1,58 @@
-# Neural-Lingua Translator
+# Neural-Lingua — Học tiếng Anh từng bước
 
-Year2 source archive by dinhtri-dev. Original workspace files are unchanged.
+Web tự học cho người Việt mới bắt đầu, hướng tới A1–A2. Gồm 52 bài theo thứ tự VOA Let’s Learn English Level 1, hướng dẫn tiếng Việt, 312 mục từ vựng, 260 câu hỏi tự luyện, flashcard và công cụ dịch/giọng nói.
 
-## Contents and status
+## Chạy bản dùng thử
 
-Browser translation/speech prototype, not a trained translation model. Translation uses an external Google endpoint without account credentials. Speech availability depends on the browser. Existing GitHub Pages deployment is untouched: archive changes are pushed only to archive/year2.
+Cần Python 3.12 trở lên; ứng dụng không có thư viện runtime cần cài.
 
-## Run / inspect
+```powershell
+python serve.py
+```
 
-Open index.html with a local HTTP server, for example python -m http.server 8000 --bind 127.0.0.1. The archive branch does not change the configured Pages source branch.
+Mở http://127.0.0.1:8831. Server chỉ nghe trên máy của bạn, giới hạn file phục vụ, có CSP và security headers. Có thể chọn cổng khác bằng `python serve.py --port 8832`. Dùng HTTP cục bộ thay vì mở trực tiếp index.html, vì dữ liệu bài học được đọc bằng fetch.
 
-Install only this project's listed dependencies in a separate virtual environment. Model binaries, large datasets, private configuration and generated output are excluded. Check DATA_AND_MODELS.md when present.
+## Cách học
 
-## Archive validation
+1. Chọn bài trên Lộ trình hoặc tiếp tục bài đang học.
+2. Bấm Mở video VOA; bấm nút phát trong trình phát gốc. Chọn thêm Luyện nói/Phát âm khi có.
+3. Đọc từ, mẫu câu và làm hoạt động nói/viết. Lưu từ để ôn bằng flashcard.
+4. Trả lời đủ 5 câu rồi kiểm tra. Đạt ít nhất 4/5 để đánh dấu hoàn thành; có thể làm lại. Điểm tốt nhất được giữ.
 
-See ARCHIVE_STATUS.md and SECURITY_REVIEW.md for the exact publication scope, tests and remaining limitations. A successful source-archive check does not certify production deployment, firmware flashing, model accuracy or CAD geometry.
+Có thể tìm bài không cần dấu tiếng Việt, lọc chặng/trạng thái và mở mọi bài mà không cần đăng nhập. Công cụ Dịch hỗ trợ 7 ngôn ngữ, Ctrl/Cmd+Enter, hủy/timeout, sao chép và giọng nói tùy trình duyệt.
 
-## Future work
+## Quyền riêng tư
 
-The consolidated Google document records project-specific fixes, missing functions and suggested features. This commit focuses on reproducible archiving, not implementing that roadmap.
+Tiến độ, điểm và sổ từ lưu cục bộ khi bật lưu; có nút tắt và xóa. Bản nháp luyện viết không được lưu hoặc gửi đi. Lịch sử dịch mặc định tắt, giới hạn 20 mục khi bật. Không có tài khoản hoặc đồng bộ thiết bị.
 
-## Directory guide
+Video chỉ kết nối nhà cung cấp sau thao tác mở. Văn bản dịch được gửi tới Google qua HTTPS khi bấm Dịch; tránh thông tin riêng tư. Nhận diện giọng nói có thể dùng dịch vụ của trình duyệt và chỉ bật sau thao tác ghi âm.
 
+## Nội dung và nguồn
 
+Video thuộc VOA và phát từ trình nhúng chính thức, không được lưu trong repository. Nội dung tiếng Việt và câu hỏi là phần biên soạn của Neural-Lingua. COURSE_SOURCES.md và data/source-audit.json ghi nguồn, quyền sử dụng và kiểm tra 52 video. British Council được tham khảo để định hướng mục tiêu trình độ; web không phải sản phẩm của họ. Điểm tự luyện không xác nhận đạt CEFR.
 
-## Tests actually run
+## Kiểm thử
 
-Headless Edge verifies joined translation segments, valid auto-language swapping, real input maxlength, speech language selection and CSP-compatible interactions using a mocked translation response. No live translation-quality claim is made.
+Node 22+, Microsoft Edge, Python server đang chạy:
+
+```powershell
+npm ci --ignore-scripts
+npm test
+node tests/live-media.cjs
+```
+
+Playwright 1.62.1 chỉ là dependency phát triển. Bộ chức năng dùng dịch/giọng nói và video giả để kiểm soát lỗi, còn live-media.cjs bấm trình phát thật ở bài 1/13/26/39/52, kiểm tra thời gian phát tiến lên và hình đã giải mã. Screenshot/kết quả nằm trong test-results và không được commit. Browser test có thể dùng PLAYWRIGHT_PATH để chọn bộ Playwright đã cài, PREVIEW_URL để chọn cổng, QA_OUT_DIR để đổi thư mục kết quả.
+
+## Cấu trúc
+
+- index.html, styles.css: khung giao diện và responsive.
+- js/: điều hướng, bài học, dữ liệu cục bộ và dịch.
+- data/course.json: 52 bài với ID ổn định, từ vựng và bài tập.
+- data/source-audit.json: nguồn video và bằng chứng kiểm tra HTTP, không đánh đồng HTTP 200 với phát video.
+- tests/: chức năng, tình huống lỗi và kiểm tra video thật.
+
+## Giới hạn và xuất bản
+
+Dịch dùng endpoint Google thử nghiệm, có thể ngừng hoặc đổi. Chưa có cam kết chất lượng dịch. Giọng nói tùy browser/OS; kiểm thử giọng nói tự động dùng stub, không đánh giá phát âm hoặc micro thật. Trình phát/nguồn video ngoài có thể thay đổi. Server cục bộ không phải môi trường production.
+
+Bản mới nằm trên archive/year2. GitHub Pages tiếp tục dùng main; lần cập nhật này không triển khai website. Không force-push hoặc viết lại lịch sử. Xem SECURITY_REVIEW.md và REVIEW_ROUNDS.md để biết phạm vi kiểm tra và đánh giá độc lập.

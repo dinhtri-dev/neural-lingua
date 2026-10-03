@@ -1,256 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-aOqHM8YbKMzpjNFE1uW4Im77RiGKZgq0/OGbTOpVqAI='; style-src 'sha256-mjS2UCkNJtH9EnW7jIHkkHYU7l4sgdMHHChcpG9FIvw='; connect-src https://translate.googleapis.com; base-uri 'none'; form-action 'none'; object-src 'none'">
-  <meta charset="UTF-8">
-  <title>Neural-Lingua Translator</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background-color: #e9e1e5;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .translator-wrapper {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .side {
-      flex: 1;
-      min-width: 300px;
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-    }
-    select, button {
-      padding: 10px;
-      font-size: 14px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-    }
-    .text-box {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      background-color: white;
-      position: relative;
-    }
-    textarea {
-      width: 100%;
-      height: 150px;
-      font-size: 16px;
-      padding: 10px;
-      border: none;
-      outline: none;
-      resize: none;
-      background-color: transparent;
-    }
-    .char-count {
-      text-align: right;
-      font-size: 12px;
-      color: #888;
-    }
-    .controls {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .switch-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .switch-button button {
-      font-size: 28px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      margin-top: 70px;
-    }
-    .translated-label {
-      color: #5f6368;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://translate.googleapis.com; frame-src https://learningenglish.voanews.com; img-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'">
+  <meta name="description" content="52 bài tiếng Anh VOA với hướng dẫn tiếng Việt, bài tập, ôn từ vựng và công cụ dịch.">
+  <title>Neural-Lingua · Học tiếng Anh mỗi ngày</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/app.js"></script>
 </head>
 <body>
-
-<h2>Neural-Lingua Translator</h2>
-<p>Văn bản được gửi tới dịch vụ dịch bên ngoài khi bạn bấm Dịch. Tránh nhập thông tin riêng tư.</p>
-
-<div class="translator-wrapper">
-
-  <!-- Bên trái -->
-  <div class="side">
-    <select id="sourceLanguage">
-      <option value="auto">Phát hiện ngôn ngữ</option>
-      <option value="vi">Tiếng Việt</option>
-      <option value="en">Tiếng Anh</option>
-      <option value="fr">Tiếng Pháp</option>
-      <option value="es">Tiếng Tây Ban Nha</option>
-      <option value="ja">Tiếng Nhật</option>
-      <option value="ko">Tiếng Hàn</option>
-      <option value="zh">Tiếng Trung</option>
-    </select>
-    <div class="text-box">
-      <textarea id="textInput" placeholder="Nhập nội dung cần dịch..." maxlength="5000"></textarea>
-      <div class="char-count" id="charCount">0 / 5000</div>
-      <div class="controls">
-        <button id="recordButton">🎤 Ghi âm</button>
-        <button id="translateButton">🔁 Dịch</button>
-      </div>
+  <a class="skip-link" href="#main">Đến nội dung</a>
+  <header class="site-header">
+    <a class="brand" href="#roadmap" aria-label="Neural-Lingua, về lộ trình"><span class="brand-mark" aria-hidden="true">N<span>·</span>L</span><span>Neural-Lingua<small>Tiếng Anh, từng bước một</small></span></a>
+    <nav aria-label="Điều hướng chính">
+      <a href="#roadmap" data-nav="roadmap">Lộ trình</a>
+      <a href="#lesson/1" data-nav="lesson" id="lessonNav">Bài học</a>
+      <a href="#review" data-nav="review">Ôn tập <span id="savedCount" class="nav-count">0</span></a>
+      <a href="#translate" data-nav="translate">Dịch</a>
+    </nav>
+  </header>
+  <div class="storage-warning" id="storageWarning" role="status" hidden></div>
+  <main id="main" tabindex="-1" aria-busy="true"><p class="loading">Đang mở lộ trình…</p></main>
+  <footer class="site-footer">
+    <div><strong>Học theo nhịp của bạn.</strong><p>Video: VOA Learning English. Hướng dẫn tiếng Việt và bài tập: Neural-Lingua.</p><p>Hướng tới A1–A2; kết quả bài tập không thay thế đánh giá năng lực CEFR.</p></div>
+    <div class="privacy-controls">
+      <label><input type="checkbox" id="saveProgress" checked> Lưu tiến độ trên thiết bị này</label>
+      <button id="resetProgress" class="text-button">Xóa dữ liệu học</button>
+      <a href="#sources">Nguồn nội dung & quyền riêng tư</a>
     </div>
-  </div>
-
-  <!-- Nút đảo chiều -->
-  <div class="switch-button">
-    <button id="swapButton">⇄</button>
-  </div>
-
-  <!-- Bên phải -->
-  <div class="side">
-    <select id="targetLanguage">
-      <option value="en">Tiếng Anh</option>
-      <option value="vi">Tiếng Việt</option>
-<option value="fr">Tiếng Pháp</option>
-      <option value="es">Tiếng Tây Ban Nha</option>
-      <option value="ja">Tiếng Nhật</option>
-      <option value="ko">Tiếng Hàn</option>
-      <option value="zh">Tiếng Trung</option>
-    </select>
-    <div class="text-box">
-      <textarea id="translatedText" placeholder="Bản dịch..." readonly></textarea>
-      <div class="translated-label">Bản dịch</div>
-      <div class="controls">
-        <button id="playButton">🔊 Nghe</button>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  function updateCharCount() {
-    const text = document.getElementById("textInput").value;
-    document.getElementById("charCount").innerText = `${text.length} / 5000`;
-  }
-
-  function swapLanguages() {
-    const source = document.getElementById("sourceLanguage");
-    const target = document.getElementById("targetLanguage");
-    const temp = source.value;
-    source.value = target.value;
-    target.value = temp === 'auto' ? (detectedLanguage || 'vi') : temp;
-
-    const input = document.getElementById("textInput");
-    const output = document.getElementById("translatedText");
-    const tempText = input.value;
-    input.value = output.value.slice(0, 5000);
-    output.value = tempText;
-
-    updateCharCount();
-  }
-
-  let detectedLanguage = 'vi';
-  let activeRequest = null;
-  let requestNumber = 0;
-  async function translateText() {
-    const number = ++requestNumber;
-    if (activeRequest) activeRequest.abort();
-    activeRequest = new AbortController();
-    const controller = activeRequest;
-    const timeout = setTimeout(() => controller.abort(), 15000);
-    const text = document.getElementById("textInput").value.trim();
-    const from = document.getElementById("sourceLanguage").value;
-    const to = document.getElementById("targetLanguage").value;
-    const output = document.getElementById("translatedText");
-
-    if (!text || text.length > 5000) {
-      clearTimeout(timeout);
-      output.value = "Vui lòng nhập nội dung.";
-      return;
-    }
-
-    output.value = "⏳ Đang dịch...";
-
-    try {
-      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURIComponent(text)}`;
-      const res = await fetch(url, {signal: controller.signal, credentials: 'omit', referrerPolicy: 'no-referrer'});
-      if (!res.ok) throw new Error('Translation unavailable');
-      const data = await res.json();
-      if (number !== requestNumber) return;
-      if (!Array.isArray(data[0])) throw new Error('Invalid response');
-      detectedLanguage = ['vi','en','fr','es','ja','ko','zh'].includes(data[2]) ? data[2] : 'vi';
-      output.value = data[0].filter(Array.isArray).map(segment => typeof segment[0] === 'string' ? segment[0] : '').join('');
-    } catch (err) {
-      if (number !== requestNumber) return;
-      output.value = "⚠️ Không thể dịch. Kiểm tra mạng và thử lại.";
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  function playTranslation() {
-    const text = document.getElementById("translatedText").value;
-    const lang = document.getElementById("targetLanguage").value;
-
-    if (!text) return;
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
-  }
-
-  function startRecording() {
-    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
-      alert("Trình duyệt không hỗ trợ ghi âm.");
-      return;
-    }
-
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    const source = document.getElementById('sourceLanguage').value;
-    recognition.lang = source === 'auto' ? (detectedLanguage || 'vi') : source;
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    recognition.start();
-
-    recognition.onresult = function(event) {
-      const transcript = event.results[0][0].transcript;
-document.getElementById("textInput").value = transcript.slice(0, 5000);
-      updateCharCount();
-    };
-
-    recognition.onerror = function(event) {
-      alert("Lỗi ghi âm: " + event.error);
-    };
-  }
-
-  document.getElementById('textInput').addEventListener('input', updateCharCount);
-  document.getElementById('translateButton').addEventListener('click', translateText);
-  document.getElementById('recordButton').addEventListener('click', startRecording);
-  document.getElementById('swapButton').addEventListener('click', swapLanguages);
-  document.getElementById('playButton').addEventListener('click', playTranslation);
-  if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = () => {
-    speechSynthesis.getVoices(); // load danh sách voice
-  };
-</script>
-
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="resetDialog" aria-labelledby="resetTitle">
+    <h2 id="resetTitle">Xóa dữ liệu học?</h2>
+    <p>Tiến độ, điểm bài tập và từ đã lưu trên thiết bị này sẽ được xóa. Thao tác này không thể hoàn tác.</p>
+    <div class="actions"><button id="cancelReset" class="secondary">Giữ dữ liệu</button><button id="confirmReset" class="danger">Xóa dữ liệu học</button></div>
+  </dialog>
 </body>
 </html>

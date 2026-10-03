@@ -1,7 +1,7 @@
-# Archive scope
+# Publication scope
 
-Source archive for study and local experiments. No website deployment, hardware upload, model training, or production release is performed by this archive.
+Neural-Lingua now includes an independently authored learning companion for the 52 original VOA Level 1 videos and a browser translator. Media remains in official remote players. Source rights, HTTP metadata and representative real playback are documented separately.
 
-Original sources remain in the Year2 workspace. Runtime-generated data, private configuration, third-party textbooks, unverified group datasets, and model binaries are excluded from Git.
+The local preview binds only 127.0.0.1. No public website deployment, accounts, database, upload endpoint or paid credentials are introduced. GitHub Pages remains on main. Source changes are published only to archive/year2, preserving existing history and visibility.
 
-Only documented local/demo entry points are supported. Firmware, CAD assemblies, and machine-learning results require their original hardware/toolchain and independent validation. Do not expose the demo applications to the Internet or use classification output as an automatic harvest decision.
+Original Year2 source folders are unchanged. Known external-service and browser limitations are in README.md. User experience scores apply only to the revision actually reviewed.
