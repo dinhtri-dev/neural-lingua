@@ -10,6 +10,9 @@ class PreviewHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
     def allowed(self):
+        # Reject arbitrary Host values, including DNS rebinding to loopback.
+        if self.headers.get('Host', '').lower() not in [f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}']:
+            return False
         path = unquote(urlsplit(self.path).path).lstrip('/') or 'index.html'
         target = (ROOT / path).resolve()
         if not target.is_relative_to(ROOT) or any(part.startswith('.') for part in Path(path).parts):

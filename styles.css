@@ -8,3 +8,6 @@ main{max-width:1240px;margin:auto;padding:38px 40px 60px;min-height:65vh}main:fo
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 .lesson-layout>*,.panel,.translator-grid>*{min-width:0}.quiz-question legend{max-width:100%;overflow-wrap:anywhere}.quiz-option span{overflow-wrap:anywhere}.vocab-card>div{min-width:0}.vocab-card small{overflow-wrap:anywhere}
 .video-stage{width:100%;max-width:100%}
+
+.learning-guide summary,.writing-model summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:600}.writing-model{margin-top:18px;border-top:1px solid var(--line)}.writing-model p{margin:14px 0}.saved-score{font-size:14px;padding:8px 12px;background:#e8efdb;border-radius:9px;display:inline-block}.privacy-controls>p{max-width:290px;line-height:1.5}
+@media(max-width:760px){.lesson-sidebar{padding:10px 14px;margin-bottom:12px}.lesson-sidebar>.eyebrow,.lesson-sidebar .sidebar-credit{display:none}.lesson-sidebar .learning-guide ol{display:block}.lesson-sidebar .jump-links{gap:0 14px}.lesson-sidebar .jump-links a{padding:6px 0;min-height:44px}.lesson-sidebar .learning-guide summary{padding:4px 0}.lesson-heading{margin:16px 0 14px}.lesson-heading .subheading{margin-bottom:8px}.saved-score{margin-bottom:0}.lesson-sidebar a{font-size:13px}}

@@ -11,5 +11,5 @@ async function start(){try{const r=await fetch('data/course.json',{credentials:'
 window.addEventListener('hashchange',route);
 window.addEventListener('pagehide',()=>destroy());
 document.getElementById('saveProgress').addEventListener('change',e=>{if(!store)return;store.setEnabled(e.target.checked);refresh();toast(store.enabled?'Đã bật lưu tiến độ trên thiết bị.':'Đã tắt lưu; tiếp tục học trong phiên này.');});
-const dialog=document.getElementById('resetDialog');document.getElementById('resetProgress').addEventListener('click',()=>dialog.showModal());document.getElementById('cancelReset').addEventListener('click',()=>dialog.close());document.getElementById('confirmReset').addEventListener('click',()=>{if(!store)return;const ok=store.reset();dialog.close();currentRoute='';route();if(ok)toast('Đã xóa tiến độ, điểm và từ đã lưu.');});
+const dialog=document.getElementById('resetDialog');document.getElementById('resetProgress').addEventListener('click',()=>dialog.showModal());document.getElementById('cancelReset').addEventListener('click',()=>dialog.close());document.getElementById('confirmReset').addEventListener('click',()=>{if(!store)return;const ok=store.reset();dialog.close();currentRoute='';if(location.hash==='#roadmap')route();else location.hash='roadmap';if(ok)toast('Đã xóa tiến độ, điểm và từ đã lưu.');});
 start();

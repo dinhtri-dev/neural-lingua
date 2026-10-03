@@ -108,15 +108,16 @@
         },
         {
           "id": "1-v2",
-          "prompt": "Trong câu ‘My name is Minh.’, ‘name’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn mới gặp một người. Câu nào vừa chào vừa giới thiệu tên bạn?",
           "choices": [
-            "chào mừng",
-            "căn hộ",
-            "tên",
-            "xin chào"
+            "Where is Linh?",
+            "She is Linh.",
+            "Hello, I am Linh.",
+            "Goodbye, Linh."
           ],
           "answer": 2,
-          "explanation": "name nghĩa là tên. Ví dụ này gắn với chủ đề chào hỏi."
+          "explanation": "Dùng hello để chào và I am để tự giới thiệu."
         },
         {
           "id": "1-context",
@@ -177,6 +178,15 @@
         "checkedAt": "2026-10-03T17:56:34.328763+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề chào hỏi, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: hello, welcome, name.",
+          "Dùng ít nhất một mẫu I am / You are; kiểm tra theo câu mẫu: I am Linh."
+        ],
+        "sample": "Hello! I am Linh. I am a new student. Nice to meet you.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng I am (I'm) để giới thiệu bản thân. You are (You're) nói về người đối diện. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -240,15 +250,16 @@
         },
         {
           "id": "2-v2",
-          "prompt": "Trong câu ‘My job is interesting.’, ‘job’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn chưa biết tên người hàng xóm mới. Bạn hỏi gì?",
           "choices": [
-            "thành phố",
-            "công việc",
-            "người bạn",
-            "hàng xóm"
+            "How is the weather?",
+            "What is your name?",
+            "Where is my pen?",
+            "What is my name?"
           ],
           "answer": 1,
-          "explanation": "job nghĩa là công việc. Ví dụ này gắn với chủ đề làm quen."
+          "explanation": "Your name hỏi tên người đối diện."
         },
         {
           "id": "2-context",
@@ -309,6 +320,15 @@
         "checkedAt": "2026-10-03T17:56:31.731484+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề làm quen, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: friend, neighbor, job.",
+          "Dùng ít nhất một mẫu What + be; kiểm tra theo câu mẫu: What is your name?"
+        ],
+        "sample": "Hello, neighbor! My name is Linh. I work as a teacher. I would like to be your friend.",
+        "commonError": "Tránh nhầm cấu trúc: Hỏi tên bằng What is your name? Đại từ my/your thể hiện người sở hữu. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -372,15 +392,16 @@
         },
         {
           "id": "3-v2",
-          "prompt": "Trong câu ‘Dinner is ready at six.’, ‘dinner’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn gọi điện và muốn hỏi người kia đang ở đâu. Câu nào phù hợp?",
           "choices": [
-            "bữa tối",
-            "ở đây",
-            "điện thoại",
-            "gọi điện"
+            "Where are you?",
+            "Who is your teacher?",
+            "What is your name?",
+            "Are you hungry?"
           ],
           "answer": 0,
-          "explanation": "dinner nghĩa là bữa tối. Ví dụ này gắn với chủ đề gọi điện."
+          "explanation": "Where hỏi vị trí; you chỉ người đang nghe máy."
         },
         {
           "id": "3-context",
@@ -441,6 +462,15 @@
         "checkedAt": "2026-10-03T17:56:31.328273+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề gọi điện, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: here, phone, dinner.",
+          "Dùng ít nhất một mẫu Here / there; kiểm tra theo câu mẫu: Where are you?"
+        ],
+        "sample": "Hello, I am here at home. Call me on my phone when you arrive. I am hungry, so let's have dinner together.",
+        "commonError": "Tránh nhầm cấu trúc: I am here cho biết mình ở đây. Hỏi vị trí bằng Where are you? Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -504,15 +534,16 @@
         },
         {
           "id": "4-v2",
-          "prompt": "Trong câu ‘This book is about travel.’, ‘book’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn thấy một vật lạ trên bàn và muốn biết đó là gì. Bạn hỏi gì?",
           "choices": [
-            "túi",
-            "cà phê",
-            "ô / dù",
-            "quyển sách"
+            "Who is she?",
+            "Where are you from?",
+            "How are you?",
+            "What is it?"
           ],
           "answer": 3,
-          "explanation": "book nghĩa là quyển sách. Ví dụ này gắn với chủ đề đồ vật."
+          "explanation": "What is it hỏi tên hoặc loại của đồ vật."
         },
         {
           "id": "4-context",
@@ -573,6 +604,15 @@
         "checkedAt": "2026-10-03T17:56:31.821465+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề đồ vật, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: bag, coffee, book.",
+          "Dùng ít nhất một mẫu A / an; kiểm tra theo câu mẫu: It is an umbrella."
+        ],
+        "sample": "What is it? It is an umbrella. My book and pen are in my bag.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng a trước âm phụ âm, an trước âm nguyên âm. What is it? hỏi tên một đồ vật. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -636,15 +676,16 @@
         },
         {
           "id": "5-v2",
-          "prompt": "Trong câu ‘The bathroom is upstairs.’, ‘bathroom’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn cần tìm bếp trong căn hộ. Câu hỏi nào giúp bạn?",
           "choices": [
-            "phòng ngủ",
-            "phòng khách",
-            "phòng tắm",
-            "nhà bếp"
+            "Who is the cook?",
+            "What is your job?",
+            "Where is the kitchen?",
+            "When is dinner?"
           ],
           "answer": 2,
-          "explanation": "bathroom nghĩa là phòng tắm. Ví dụ này gắn với chủ đề các phòng."
+          "explanation": "Hỏi vị trí phòng dùng Where is và tên phòng."
         },
         {
           "id": "5-context",
@@ -705,6 +746,15 @@
         "checkedAt": "2026-10-03T17:56:31.735388+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề các phòng, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: kitchen, bedroom, bathroom.",
+          "Dùng ít nhất một mẫu Where + be; kiểm tra theo câu mẫu: Where is the kitchen?"
+        ],
+        "sample": "This apartment has a kitchen and a bedroom. The bathroom is next to the bedroom.",
+        "commonError": "Tránh nhầm cấu trúc: Where is ...? hỏi vị trí một người/đồ vật số ít. Where are ...? dùng cho số nhiều. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -768,15 +818,16 @@
         },
         {
           "id": "6-v2",
-          "prompt": "Trong câu ‘I use the stairs every day.’, ‘stairs’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Người hướng dẫn nói Turn left, then take the stairs. Bạn nên làm gì?",
           "choices": [
-            "bên trái",
-            "cầu thang",
-            "phòng tập",
-            "thang máy"
+            "Đi thẳng rồi quay lại.",
+            "Rẽ trái rồi đi cầu thang bộ.",
+            "Rẽ phải rồi đi thang máy.",
+            "Đứng yên trước cửa."
           ],
           "answer": 1,
-          "explanation": "stairs nghĩa là cầu thang. Ví dụ này gắn với chủ đề chỉ đường."
+          "explanation": "Left là trái; stairs là cầu thang bộ. Thứ tự then là sau đó."
         },
         {
           "id": "6-context",
@@ -837,6 +888,15 @@
         "checkedAt": "2026-10-03T17:56:31.783819+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề chỉ đường, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: gym, elevator, stairs.",
+          "Dùng ít nhất một mẫu Mệnh lệnh; kiểm tra theo câu mẫu: Turn left at the elevator."
+        ],
+        "sample": "To get to the gym, turn left at the elevator. Then take the stairs.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng động từ nguyên mẫu để chỉ dẫn: Turn left. Take the stairs. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -900,15 +960,16 @@
         },
         {
           "id": "7-v2",
-          "prompt": "Trong câu ‘She is writing a short story.’, ‘writing’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn thấy bạn mình gõ thư điện tử ngay lúc này. Câu nào mô tả đúng?",
           "choices": [
-            "đang viết",
-            "bận",
-            "đồng nghiệp",
-            "đang đọc"
+            "She is writing an email.",
+            "She wrote an email yesterday.",
+            "She will write tomorrow.",
+            "She never writes emails."
           ],
           "answer": 0,
-          "explanation": "writing nghĩa là đang viết. Ví dụ này gắn với chủ đề việc đang làm."
+          "explanation": "Is writing diễn tả hành động đang diễn ra."
         },
         {
           "id": "7-context",
@@ -969,6 +1030,15 @@
         "checkedAt": "2026-10-03T17:56:31.904184+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề việc đang làm, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: busy, coworker, writing.",
+          "Dùng ít nhất một mẫu Hiện tại tiếp diễn; kiểm tra theo câu mẫu: She is writing an email now."
+        ],
+        "sample": "My coworker is busy now. She is writing an email. I am reading a book while she is working.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng am/is/are + V-ing cho hành động đang diễn ra: She is working now. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1032,15 +1102,16 @@
         },
         {
           "id": "8-v2",
-          "prompt": "Trong câu ‘I usually eat breakfast at home.’, ‘usually’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn đi bộ tới nơi làm việc mỗi ngày. Câu nào nói thói quen này?",
           "choices": [
-            "xin lỗi",
-            "mỗi ngày",
-            "bữa trưa",
-            "thường"
+            "I walked there once.",
+            "I am at home now.",
+            "I will take a taxi tomorrow.",
+            "I walk to work every day."
           ],
           "answer": 3,
-          "explanation": "usually nghĩa là thường. Ví dụ này gắn với chủ đề thói quen."
+          "explanation": "Every day báo thói quen, dùng hiện tại đơn walk."
         },
         {
           "id": "8-context",
@@ -1101,6 +1172,15 @@
         "checkedAt": "2026-10-03T17:56:32.433219+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề thói quen, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: sorry, every day, usually.",
+          "Dùng ít nhất một mẫu Hiện tại đơn; kiểm tra theo câu mẫu: She walks to work every day."
+        ],
+        "sample": "I walk to work every day. I usually arrive early. I say sorry when I am late.",
+        "commonError": "Tránh nhầm cấu trúc: I/you/we/they dùng động từ nguyên mẫu. He/she/it thường thêm -s hoặc -es khi nói thói quen. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1164,15 +1244,16 @@
         },
         {
           "id": "9-v2",
-          "prompt": "Trong câu ‘The weather changes quickly.’, ‘weather’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Ngoài trời đang mưa, bạn muốn báo cho bạn mình. Bạn nói gì?",
           "choices": [
-            "nóng",
-            "có mưa",
-            "thời tiết",
-            "lạnh"
+            "I am a rainy person.",
+            "The rain was last week.",
+            "It is rainy today.",
+            "It is sunny today."
           ],
           "answer": 2,
-          "explanation": "weather nghĩa là thời tiết. Ví dụ này gắn với chủ đề thời tiết."
+          "explanation": "Rainy mô tả thời tiết có mưa trong ngày hôm nay."
         },
         {
           "id": "9-context",
@@ -1233,6 +1314,15 @@
         "checkedAt": "2026-10-03T17:56:32.359484+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề thời tiết, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: cold, hot, weather.",
+          "Dùng ít nhất một mẫu It + be + tính từ; kiểm tra theo câu mẫu: It is cold today."
+        ],
+        "sample": "It is cold and rainy today. I need a coat because the weather is bad.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng It is + tính từ để nói thời tiết: It is sunny. Hỏi bằng What is the weather like? Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1296,15 +1386,16 @@
         },
         {
           "id": "10-v2",
-          "prompt": "Trong câu ‘My home is near the park.’, ‘near’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn mời bạn bè ghé nhà mình. Lời mời nào phù hợp?",
           "choices": [
-            "xa",
-            "gần",
-            "nơi / chỗ",
-            "ghé thăm"
+            "Where is your office?",
+            "Come over to my home.",
+            "Go away from my home.",
+            "I cannot visit you."
           ],
           "answer": 1,
-          "explanation": "near nghĩa là gần. Ví dụ này gắn với chủ đề mời tới nhà."
+          "explanation": "Come over là lời mời ghé thăm nhà."
         },
         {
           "id": "10-context",
@@ -1365,6 +1456,15 @@
         "checkedAt": "2026-10-03T17:56:32.425377+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề mời tới nhà, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: place, come over, near.",
+          "Dùng ít nhất một mẫu Near / far from; kiểm tra theo câu mẫu: My home is far from the station."
+        ],
+        "sample": "Come over to my home! It is near the station. It is not far from your apartment.",
+        "commonError": "Tránh nhầm cấu trúc: Near diễn đạt gần; far from diễn đạt xa. Come over là lời mời ghé thăm. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1428,15 +1528,16 @@
         },
         {
           "id": "11-v2",
-          "prompt": "Trong câu ‘The post office is next to the bank.’, ‘post office’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn cần gửi thư. Bạn nên tìm địa điểm nào?",
           "choices": [
-            "bưu điện",
-            "việc vặt cần đi làm",
-            "thư viện",
-            "ngân hàng"
+            "The post office.",
+            "The gym.",
+            "The movie theater.",
+            "The restaurant."
           ],
           "answer": 0,
-          "explanation": "post office nghĩa là bưu điện. Ví dụ này gắn với chủ đề khu phố."
+          "explanation": "Post office là bưu điện, phù hợp việc gửi thư."
         },
         {
           "id": "11-context",
@@ -1497,6 +1598,15 @@
         "checkedAt": "2026-10-03T17:56:32.468462+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề khu phố, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: errand, library, post office.",
+          "Dùng ít nhất một mẫu Giới từ vị trí; kiểm tra theo câu mẫu: The bank is between the cafe and the library."
+        ],
+        "sample": "The bank is next to the post office. The library is across from the cafe.",
+        "commonError": "Tránh nhầm cấu trúc: Next to là bên cạnh; between ... and ... là giữa hai vị trí. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1560,15 +1670,16 @@
         },
         {
           "id": "12-v2",
-          "prompt": "Trong câu ‘My father cooks dinner.’, ‘father’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn giới thiệu cha mẹ với một người bạn. Câu nào phù hợp?",
           "choices": [
-            "gia đình",
-            "mẹ",
-            "chị / em gái",
-            "bố / cha"
+            "This is my classroom.",
+            "They are my shoes.",
+            "That is your office.",
+            "These are my parents."
           ],
           "answer": 3,
-          "explanation": "father nghĩa là bố / cha. Ví dụ này gắn với chủ đề gia đình."
+          "explanation": "Parents là cha mẹ; these are giới thiệu nhiều người."
         },
         {
           "id": "12-context",
@@ -1629,6 +1740,15 @@
         "checkedAt": "2026-10-03T17:56:32.503201+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề gia đình, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: family, mother, father.",
+          "Dùng ít nhất một mẫu Tính từ sở hữu; kiểm tra theo câu mẫu: This is my mother."
+        ],
+        "sample": "This is my family. My mother and father live with my brother. I feel homesick when I am away.",
+        "commonError": "Tránh nhầm cấu trúc: My, your, his, her, our, their đứng trước danh từ để diễn đạt sở hữu. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1692,15 +1812,16 @@
         },
         {
           "id": "13-v2",
-          "prompt": "Trong câu ‘I hear music in the street.’, ‘music’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn buồn chán vì không có việc gì làm. Lời đề xuất nào giúp ích?",
           "choices": [
-            "buồn chán",
-            "thú vị",
-            "âm nhạc",
-            "sinh nhật"
+            "It is your umbrella.",
+            "My name is Anna.",
+            "Let's visit a museum.",
+            "Let's do nothing forever."
           ],
           "answer": 2,
-          "explanation": "music nghĩa là âm nhạc. Ví dụ này gắn với chủ đề giải trí."
+          "explanation": "Let's đưa đề xuất một hoạt động để làm cùng nhau."
         },
         {
           "id": "13-context",
@@ -1761,6 +1882,15 @@
         "checkedAt": "2026-10-03T17:56:33.069911+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề giải trí, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: birthday, bored, music.",
+          "Dùng ít nhất một mẫu Bored / boring; kiểm tra theo câu mẫu: I feel bored when there is nothing to do."
+        ],
+        "sample": "I feel bored today. Let's see an interesting play with a famous actor. We can listen to music afterward.",
+        "commonError": "Tránh nhầm cấu trúc: Bored nói cảm giác của người; boring nói điều gây buồn chán. Interesting nói điều gây hứng thú. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1824,15 +1954,16 @@
         },
         {
           "id": "14-v2",
-          "prompt": "Trong câu ‘Her dress is red.’, ‘dress’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn thử đôi giày và muốn nói chúng dễ chịu. Bạn nói gì?",
           "choices": [
-            "giày",
-            "váy liền",
-            "mặc",
-            "áo sơ mi"
+            "Those shoes is comfortable.",
+            "These shoes are comfortable.",
+            "This shoes is comfortable.",
+            "I am comfortable shoes."
           ],
           "answer": 1,
-          "explanation": "dress nghĩa là váy liền. Ví dụ này gắn với chủ đề trang phục."
+          "explanation": "Shoes là số nhiều, đi với these và are."
         },
         {
           "id": "14-context",
@@ -1893,6 +2024,15 @@
         "checkedAt": "2026-10-03T17:56:34.207811+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề trang phục, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: wear, shirt, dress.",
+          "Dùng ít nhất một mẫu This / these; kiểm tra theo câu mẫu: These shoes are comfortable."
+        ],
+        "sample": "These shoes are comfortable. I like this shirt, too. I will wear them to the party.",
+        "commonError": "Tránh nhầm cấu trúc: This dùng với danh từ số ít gần người nói; these dùng với danh từ số nhiều. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -1956,15 +2096,16 @@
         },
         {
           "id": "15-v2",
-          "prompt": "Trong câu ‘A man is running near the river.’, ‘running’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn thấy nhiều người đi bộ trong công viên. Câu nào nói việc đang diễn ra?",
           "choices": [
-            "đang chạy",
-            "quan sát mọi người",
-            "đang đi bộ",
-            "đang ngồi"
+            "They are walking in the park.",
+            "They walked last year.",
+            "They will walk tomorrow.",
+            "They never leave home."
           ],
           "answer": 0,
-          "explanation": "running nghĩa là đang chạy. Ví dụ này gắn với chủ đề quan sát."
+          "explanation": "They are walking là hành động hiện tại, đang diễn ra."
         },
         {
           "id": "15-context",
@@ -2025,6 +2166,15 @@
         "checkedAt": "2026-10-03T17:56:33.077276+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề quan sát, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: people-watching, walking, running.",
+          "Dùng ít nhất một mẫu Are + V-ing; kiểm tra theo câu mẫu: They are walking in the park now."
+        ],
+        "sample": "I enjoy people-watching in the park. Some people are walking, and others are running. I am sitting near the path.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng are + V-ing với they/we/you để mô tả việc đang diễn ra. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2088,15 +2238,16 @@
         },
         {
           "id": "16-v2",
-          "prompt": "Trong câu ‘The tourist asks for directions.’, ‘tourist’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn biết quê quán của người mới quen. Bạn hỏi gì?",
           "choices": [
-            "đất nước",
-            "ngôn ngữ",
-            "từ",
-            "khách du lịch"
+            "Where is my phone?",
+            "When do you eat?",
+            "What do you want to buy?",
+            "Where are you from?"
           ],
           "answer": 3,
-          "explanation": "tourist nghĩa là khách du lịch. Ví dụ này gắn với chủ đề quốc gia."
+          "explanation": "Be from hỏi xuất thân; khác câu hỏi vị trí hiện tại."
         },
         {
           "id": "16-context",
@@ -2157,6 +2308,15 @@
         "checkedAt": "2026-10-03T17:56:34.270928+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề quốc gia, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: country, language, tourist.",
+          "Dùng ít nhất một mẫu Be from; kiểm tra theo câu mẫu: Where are you from?"
+        ],
+        "sample": "I am from Vietnam. I speak Vietnamese and a little English. What country are you from?",
+        "commonError": "Tránh nhầm cấu trúc: Be from nói nơi xuất thân. Speak + tên ngôn ngữ nói khả năng/ngôn ngữ sử dụng. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2220,15 +2380,16 @@
         },
         {
           "id": "17-v2",
-          "prompt": "Trong câu ‘The movie starts at eight.’, ‘movie’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn hẹn xem phim vào thứ Sáu. Bạn hỏi gì?",
           "choices": [
-            "thứ Sáu",
-            "lịch trình",
-            "phim",
-            "rảnh"
+            "Is Friday your name?",
+            "Can Friday drive a car?",
+            "Are you free on Friday?",
+            "Are you free at Monday?"
           ],
           "answer": 2,
-          "explanation": "movie nghĩa là phim. Ví dụ này gắn với chủ đề hẹn gặp."
+          "explanation": "Free nghĩa là rảnh; on dùng với ngày trong tuần."
         },
         {
           "id": "17-context",
@@ -2289,6 +2450,15 @@
         "checkedAt": "2026-10-03T17:56:34.280263+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề hẹn gặp, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: free, Friday, movie.",
+          "Dùng ít nhất một mẫu On + ngày; kiểm tra theo câu mẫu: Are you free on Friday?"
+        ],
+        "sample": "Are you free on Friday? Let's see a movie together. We can meet at seven.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng on trước tên ngày hoặc ngày cụ thể; at trước giờ; in trước tháng/năm. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2352,15 +2522,16 @@
         },
         {
           "id": "18-v2",
-          "prompt": "Trong câu ‘I sometimes walk to work.’, ‘sometimes’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn nói mình thường uống cà phê buổi sáng. Câu nào phù hợp?",
           "choices": [
-            "không bao giờ",
-            "thỉnh thoảng",
-            "luôn luôn",
-            "thường xuyên"
+            "I am buying a cup now.",
+            "I often drink coffee in the morning.",
+            "I drank coffee once last year.",
+            "I will buy a cup tomorrow."
           ],
           "answer": 1,
-          "explanation": "sometimes nghĩa là thỉnh thoảng. Ví dụ này gắn với chủ đề tần suất."
+          "explanation": "Often thể hiện tần suất thường xuyên."
         },
         {
           "id": "18-context",
@@ -2421,6 +2592,15 @@
         "checkedAt": "2026-10-03T17:56:34.960879+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề tần suất, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: always, often, sometimes.",
+          "Dùng ít nhất một mẫu Trạng từ tần suất; kiểm tra theo câu mẫu: She always arrives early."
+        ],
+        "sample": "I always get up early. I often exercise before work. I sometimes drink coffee afterward.",
+        "commonError": "Tránh nhầm cấu trúc: Always/often/sometimes/never thường đứng trước động từ thường, sau động từ be. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2484,15 +2664,16 @@
         },
         {
           "id": "19-v2",
-          "prompt": "Trong câu ‘This assignment is due tomorrow.’, ‘assignment’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn nhận việc mới và chưa biết ngày bắt đầu. Bạn hỏi gì?",
           "choices": [
-            "nhiệm vụ / bài được giao",
-            "bắt đầu",
-            "muộn",
-            "sếp"
+            "When do I start?",
+            "What is the weather like?",
+            "Where is your mother?",
+            "How many shoes do you have?"
           ],
           "answer": 0,
-          "explanation": "assignment nghĩa là nhiệm vụ / bài được giao. Ví dụ này gắn với chủ đề công việc mới."
+          "explanation": "When hỏi thời điểm bắt đầu công việc."
         },
         {
           "id": "19-context",
@@ -2553,6 +2734,15 @@
         "checkedAt": "2026-10-03T17:56:34.869393+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề công việc mới, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: start, late, assignment.",
+          "Dùng ít nhất một mẫu When / what time; kiểm tra theo câu mẫu: When do I start?"
+        ],
+        "sample": "When do I start my new assignment? My boss wants me to arrive early. I walk to work so I am not late.",
+        "commonError": "Tránh nhầm cấu trúc: When hỏi thời điểm; What time hỏi giờ cụ thể. Do dùng với I/you/we/they trong hiện tại đơn. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2616,15 +2806,16 @@
         },
         {
           "id": "20-v2",
-          "prompt": "Trong câu ‘My father can drive a bus.’, ‘drive’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Nhà tuyển dụng hỏi bạn biết làm gì. Câu nào nói khả năng?",
           "choices": [
-            "có thể",
-            "nấu ăn",
-            "kỹ năng",
-            "lái xe"
+            "I drove a car yesterday.",
+            "I want a blue car.",
+            "I am near a car.",
+            "I can drive a car."
           ],
           "answer": 3,
-          "explanation": "drive nghĩa là lái xe. Ví dụ này gắn với chủ đề khả năng."
+          "explanation": "Can drive nói khả năng lái xe, sau can dùng động từ nguyên mẫu."
         },
         {
           "id": "20-context",
@@ -2685,6 +2876,15 @@
         "checkedAt": "2026-10-03T17:56:34.945228+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề khả năng, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: can, cook, drive.",
+          "Dùng ít nhất một mẫu Can + động từ; kiểm tra theo câu mẫu: She can drive a car."
+        ],
+        "sample": "My job interview is tomorrow. I can drive and cook. I want to help people and learn a new skill.",
+        "commonError": "Tránh nhầm cấu trúc: Sau can/cannot (can't) dùng động từ nguyên mẫu, không thêm to hoặc -s. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2748,15 +2948,16 @@
         },
         {
           "id": "21-v2",
-          "prompt": "Trong câu ‘My test is on Monday.’, ‘test’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn được mời tới tiệc nhưng phải học cho bài thi lái xe. Bạn nói gì?",
           "choices": [
-            "mời",
-            "phải",
-            "bài kiểm tra",
-            "bữa tiệc"
+            "My test is a party.",
+            "Where is your umbrella?",
+            "Sorry, I have to study for my driving test.",
+            "Yes, I am free and have no test."
           ],
           "answer": 2,
-          "explanation": "test nghĩa là bài kiểm tra. Ví dụ này gắn với chủ đề lời mời."
+          "explanation": "Have to study nói nghĩa vụ khiến bạn chưa thể nhận lời mời."
         },
         {
           "id": "21-context",
@@ -2817,6 +3018,15 @@
         "checkedAt": "2026-10-03T17:56:35.682035+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề lời mời, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: party, invite, test.",
+          "Dùng ít nhất một mẫu Have to; kiểm tra theo câu mẫu: She has to take a test."
+        ],
+        "sample": "Thank you for the party invitation. I must study for my test. I have to practice driving tonight.",
+        "commonError": "Tránh nhầm cấu trúc: Have to + động từ nguyên mẫu diễn đạt nghĩa vụ; he/she/it dùng has to. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -2880,15 +3090,16 @@
         },
         {
           "id": "22-v2",
-          "prompt": "Trong câu ‘The show is for children.’, ‘show’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn lên kế hoạch làm chương trình thiếu nhi vào mùa hè tới. Câu nào phù hợp?",
           "choices": [
-            "ý tưởng",
-            "chương trình",
-            "mùa hè",
-            "tiếp theo"
+            "Summer is my name.",
+            "We are going to make a children's show next summer.",
+            "We made the show last summer.",
+            "We are watching yesterday."
           ],
           "answer": 1,
-          "explanation": "show nghĩa là chương trình. Ví dụ này gắn với chủ đề kế hoạch."
+          "explanation": "Going to nói dự định; next summer là mùa hè tới."
         },
         {
           "id": "22-context",
@@ -2949,6 +3160,15 @@
         "checkedAt": "2026-10-03T17:56:36.140555+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề kế hoạch, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: summer, next, show.",
+          "Dùng ít nhất một mẫu Be going to; kiểm tra theo câu mẫu: We are going to make a new show."
+        ],
+        "sample": "Next summer, we are going to make a show for children. I have an idea for the story. I hope they will enjoy it.",
+        "commonError": "Tránh nhầm cấu trúc: Am/is/are going to + động từ nguyên mẫu diễn đạt dự định đã có. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3012,15 +3232,16 @@
         },
         {
           "id": "23-v2",
-          "prompt": "Trong câu ‘This sandwich has cheese.’, ‘sandwich’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn đứng trước xe bán đồ ăn và muốn gọi bánh mì kẹp lịch sự. Bạn nói gì?",
           "choices": [
-            "bánh mì kẹp",
-            "xe bán đồ ăn",
-            "muốn",
-            "đồ uống"
+            "I would like to order a sandwich, please.",
+            "I am a food truck.",
+            "The sandwich ordered me.",
+            "Go away, menu!"
           ],
           "answer": 0,
-          "explanation": "sandwich nghĩa là bánh mì kẹp. Ví dụ này gắn với chủ đề gọi món."
+          "explanation": "Would like to order là cách gọi món lịch sự."
         },
         {
           "id": "23-context",
@@ -3081,6 +3302,15 @@
         "checkedAt": "2026-10-03T17:56:35.386027+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề gọi món, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: food truck, want, sandwich.",
+          "Dùng ít nhất một mẫu Would like; kiểm tra theo câu mẫu: I would like to order a sandwich."
+        ],
+        "sample": "I would like to order a sandwich at the food truck. Please bring the menu. I want a drink, too.",
+        "commonError": "Tránh nhầm cấu trúc: Would like + danh từ hoặc to + động từ diễn đạt mong muốn lịch sự. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3144,15 +3374,16 @@
         },
         {
           "id": "24-v2",
-          "prompt": "Trong câu ‘I was tired yesterday.’, ‘was’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn kể cuối tuần trước đã ở công viên với bạn bè. Câu nào đúng?",
           "choices": [
-            "hôm qua",
-            "tuyệt vời / đáng kinh ngạc",
-            "đã thăm",
-            "đã là / đã ở"
+            "We will be at the park tomorrow.",
+            "We are at the park now.",
+            "We is at the park yesterday.",
+            "We were at the park last weekend."
           ],
           "answer": 3,
-          "explanation": "was nghĩa là đã là / đã ở. Ví dụ này gắn với chủ đề chuyện hôm qua."
+          "explanation": "We were dùng quá khứ với chủ ngữ số nhiều."
         },
         {
           "id": "24-context",
@@ -3213,6 +3444,15 @@
         "checkedAt": "2026-10-03T17:56:35.573398+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề chuyện hôm qua, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: yesterday, amazing, was.",
+          "Dùng ít nhất một mẫu Was / were; kiểm tra theo câu mẫu: We were at the museum yesterday."
+        ],
+        "sample": "Yesterday was amazing. We were at the museum. I visited it with my friends, and I was happy.",
+        "commonError": "Tránh nhầm cấu trúc: I/he/she/it dùng was; you/we/they dùng were khi nói quá khứ của be. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3276,15 +3516,16 @@
         },
         {
           "id": "25-v2",
-          "prompt": "Trong câu ‘This game has three levels.’, ‘game’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn chơi trò chơi trên điện thoại khi đi gần đường xe chạy. Lời cảnh báo nào phù hợp?",
           "choices": [
-            "cẩn thận",
-            "tổng thống",
-            "trò chơi",
-            "coi chừng"
+            "Forget every car.",
+            "The road is your phone.",
+            "Watch out! Be careful on this road.",
+            "Run without looking at the road."
           ],
           "answer": 2,
-          "explanation": "game nghĩa là trò chơi. Ví dụ này gắn với chủ đề an toàn."
+          "explanation": "Watch out và be careful cảnh báo cần chú ý xung quanh."
         },
         {
           "id": "25-context",
@@ -3345,6 +3586,15 @@
         "checkedAt": "2026-10-03T17:56:36.897467+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề an toàn, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: watch out, careful, game.",
+          "Dùng ít nhất một mẫu Don't + động từ; kiểm tra theo câu mẫu: Don't run while looking at your phone."
+        ],
+        "sample": "Watch out for the bike! We must be careful when playing this game. Let's visit the memorial and learn one fact about a president.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng Don't + động từ nguyên mẫu để khuyên không làm một việc. Be careful / Watch out là cảnh báo. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3408,15 +3658,16 @@
         },
         {
           "id": "26-v2",
-          "prompt": "Trong câu ‘Our team can win today.’, ‘win’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Hàng xóm cần giúp chuyển đồ. Bạn muốn đưa lời khuyên cho nhóm. Câu nào phù hợp?",
           "choices": [
-            "tự do",
-            "thắng",
-            "biểu tượng",
-            "điểm"
+            "We cannot find the kitchen.",
+            "We should help our neighbors.",
+            "We helped them last year.",
+            "We are their neighbors."
           ],
           "answer": 1,
-          "explanation": "win nghĩa là thắng. Ví dụ này gắn với chủ đề lời khuyên."
+          "explanation": "Should help đưa lời khuyên về việc nên làm."
         },
         {
           "id": "26-context",
@@ -3452,7 +3703,11 @@
             "points"
           ],
           "answer": 2,
-          "explanation": "Câu gợi ý: We ought to help our neighbors."
+          "explanation": "Should + động từ và ought to + động từ đều có nghĩa nên làm. Cả should và ought to đều đúng trong câu We ... help our neighbors.",
+          "acceptedAnswers": [
+            1,
+            2
+          ]
         }
       ],
       "media": [
@@ -3477,6 +3732,15 @@
         "checkedAt": "2026-10-03T17:56:36.805488+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề lời khuyên, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: symbol, points, win.",
+          "Dùng ít nhất một mẫu Should / ought to; kiểm tra theo câu mẫu: You should be more careful."
+        ],
+        "sample": "I won ten points in the game. The statue is a symbol of freedom. We should walk carefully, and we ought to help our neighbors.",
+        "commonError": "Tránh nhầm cấu trúc: Should + động từ và ought to + động từ đều diễn đạt lời khuyên. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3540,15 +3804,16 @@
         },
         {
           "id": "27-v2",
-          "prompt": "Trong câu ‘I have a headache.’, ‘headache’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn bị ốm và đau đầu. Lời khuyên nào phù hợp?",
           "choices": [
-            "đau đầu",
-            "ốm",
-            "bác sĩ",
-            "nghỉ ngơi"
+            "You should rest at home.",
+            "You should run all night.",
+            "Headache is my name.",
+            "You must buy new shoes."
           ],
           "answer": 0,
-          "explanation": "headache nghĩa là đau đầu. Ví dụ này gắn với chủ đề sức khỏe."
+          "explanation": "Rest at home là nghỉ ở nhà khi bị ốm; bài tập ngôn ngữ không thay tư vấn y tế."
         },
         {
           "id": "27-context",
@@ -3609,6 +3874,15 @@
         "checkedAt": "2026-10-03T17:56:35.952707+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề sức khỏe, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: sick, doctor, headache.",
+          "Dùng ít nhất một mẫu Should / shouldn't; kiểm tra theo câu mẫu: You should rest at home when you are sick."
+        ],
+        "sample": "I feel sick and have a headache. My doctor says I should rest at home. I shouldn't go to work today.",
+        "commonError": "Tránh nhầm cấu trúc: Should khuyên nên làm, shouldn't khuyên không nên làm. Sau cả hai dùng động từ nguyên mẫu. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3672,15 +3946,16 @@
         },
         {
           "id": "28-v2",
-          "prompt": "Trong câu ‘We need to solve this problem.’, ‘problem’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn đã đỗ bài thi lái xe hôm qua. Câu nào kể đúng kết quả?",
           "choices": [
-            "đã vượt qua / đỗ",
-            "đã trượt / thất bại",
-            "đã lái xe",
-            "vấn đề"
+            "I will take it next year.",
+            "I failed the test yesterday.",
+            "My license is a sandwich.",
+            "I passed my driving test yesterday."
           ],
           "answer": 3,
-          "explanation": "problem nghĩa là vấn đề. Ví dụ này gắn với chủ đề thi lái xe."
+          "explanation": "Passed nghĩa là đã đỗ; khác failed là đã trượt."
         },
         {
           "id": "28-context",
@@ -3741,6 +4016,15 @@
         "checkedAt": "2026-10-03T17:56:36.205136+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề thi lái xe, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: passed, failed, problem.",
+          "Dùng ít nhất một mẫu Quá khứ đơn; kiểm tra theo câu mẫu: She drove to the station yesterday."
+        ],
+        "sample": "I passed my driving test yesterday. I drove carefully and solved a problem. Now I have a driving license.",
+        "commonError": "Tránh nhầm cấu trúc: Động từ quá khứ có dạng -ed hoặc bất quy tắc: pass → passed, drive → drove. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3804,15 +4088,16 @@
         },
         {
           "id": "29-v2",
-          "prompt": "Trong câu ‘I wanted to be a teacher.’, ‘wanted’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn kể nơi mình đã lớn lên. Câu nào phù hợp?",
           "choices": [
-            "thời thơ ấu",
-            "đã lớn lên",
-            "đã muốn",
-            "trước đây"
+            "I am growing a town.",
+            "I never had a childhood.",
+            "I grew up in a small town.",
+            "I will grow up yesterday."
           ],
           "answer": 2,
-          "explanation": "wanted nghĩa là đã muốn. Ví dụ này gắn với chủ đề ký ức."
+          "explanation": "Grew up diễn đạt đã lớn lên, phù hợp kể ký ức thời nhỏ."
         },
         {
           "id": "29-context",
@@ -3873,6 +4158,15 @@
         "checkedAt": "2026-10-03T17:56:36.259959+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề ký ức, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: ago, childhood, wanted.",
+          "Dùng ít nhất một mẫu Ago; kiểm tra theo câu mẫu: I moved here two years ago."
+        ],
+        "sample": "I grew up in a small town many years ago. In my childhood, I wanted to be a teacher. I still remember that dream.",
+        "commonError": "Tránh nhầm cấu trúc: Khoảng thời gian + ago chỉ thời điểm trước đây và thường đi với quá khứ đơn. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -3936,15 +4230,16 @@
         },
         {
           "id": "30-v2",
-          "prompt": "Trong câu ‘These vegetables are fresh.’, ‘fresh’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn ở chợ cá, muốn hỏi giá cá. Bạn nói gì?",
           "choices": [
-            "giá",
-            "tươi",
-            "hải sản",
-            "cá"
+            "How old is the price?",
+            "How much is this fish?",
+            "Who is this fish?",
+            "Where is my license?"
           ],
           "answer": 1,
-          "explanation": "fresh nghĩa là tươi. Ví dụ này gắn với chủ đề mua thực phẩm."
+          "explanation": "How much is hỏi giá món hàng."
         },
         {
           "id": "30-context",
@@ -4005,6 +4300,15 @@
         "checkedAt": "2026-10-03T17:56:36.197322+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề mua thực phẩm, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: seafood, fish, fresh.",
+          "Dùng ít nhất một mẫu How much; kiểm tra theo câu mẫu: How much is this fish?"
+        ],
+        "sample": "I want to buy fresh seafood. How much is this fish? I need one pound for dinner.",
+        "commonError": "Tránh nhầm cấu trúc: How much hỏi giá hoặc lượng danh từ không đếm được; how many hỏi số lượng đếm được. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4068,15 +4372,16 @@
         },
         {
           "id": "31-v2",
-          "prompt": "Trong câu ‘This train goes to the city.’, ‘train’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn biết cách đi nhanh nhất tới sân vận động. Bạn hỏi gì?",
           "choices": [
-            "tàu",
-            "nhanh nhất",
-            "xe buýt",
-            "giao thông / xe cộ"
+            "What is the fastest way to the stadium?",
+            "What is your favorite sandwich?",
+            "Who is your doctor?",
+            "When is your childhood?"
           ],
           "answer": 0,
-          "explanation": "train nghĩa là tàu. Ví dụ này gắn với chủ đề phương tiện."
+          "explanation": "Fastest way hỏi phương án đi nhanh nhất tới địa điểm."
         },
         {
           "id": "31-context",
@@ -4137,6 +4442,15 @@
         "checkedAt": "2026-10-03T17:56:36.863700+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề phương tiện, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: fastest, bus, train.",
+          "Dùng ít nhất một mẫu So sánh nhất; kiểm tra theo câu mẫu: This is the fastest route."
+        ],
+        "sample": "There is heavy traffic near the stadium. The train is the fastest option today. The bus is slower, so thank you for your advice.",
+        "commonError": "Tránh nhầm cấu trúc: Tính từ ngắn thường dùng the + -est: fast → the fastest. Good → the best là bất quy tắc. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4200,15 +4514,16 @@
         },
         {
           "id": "32-v2",
-          "prompt": "Trong câu ‘I want to travel through time.’, ‘travel’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn làm chương trình thiếu nhi với cộng sự, muốn nghe ý kiến của họ. Bạn hỏi gì?",
           "choices": [
-            "cộng sự / bạn đồng hành",
-            "nhà trên cây",
-            "tương lai",
-            "du hành / đi du lịch"
+            "What is the price of this fish?",
+            "Where is your driving test?",
+            "Who is this umbrella?",
+            "What do you think of the show?"
           ],
           "answer": 3,
-          "explanation": "travel nghĩa là du hành / đi du lịch. Ví dụ này gắn với chủ đề làm chương trình."
+          "explanation": "Think of the show hỏi nhận xét về chương trình."
         },
         {
           "id": "32-context",
@@ -4269,6 +4584,15 @@
         "checkedAt": "2026-10-03T17:56:36.774160+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề làm chương trình, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: partner, treehouse, travel.",
+          "Dùng ít nhất một mẫu Think of; kiểm tra theo câu mẫu: What do you think of the show?"
+        ],
+        "sample": "My partner helps make a children's show. It is about a treehouse that can travel through time. What do you think of our show?",
+        "commonError": "Tránh nhầm cấu trúc: What do you think of ...? hỏi ý kiến. I think ... mở đầu nhận xét cá nhân. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4332,15 +4656,16 @@
         },
         {
           "id": "33-v2",
-          "prompt": "Trong câu ‘Try to hit the ball.’, ‘hit’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn hướng dẫn đồng đội bắt bóng chày. Câu nào phù hợp?",
           "choices": [
-            "đội",
-            "bắt",
-            "đánh",
-            "bóng chày"
+            "The ball is my hometown.",
+            "Sleep instead of playing.",
+            "Catch the ball, then throw it to your partner.",
+            "Eat the ball for dinner."
           ],
           "answer": 2,
-          "explanation": "hit nghĩa là đánh. Ví dụ này gắn với chủ đề luật thể thao."
+          "explanation": "Catch và throw là bắt và ném, dùng dạng nguyên mẫu để chỉ dẫn."
         },
         {
           "id": "33-context",
@@ -4401,6 +4726,15 @@
         "checkedAt": "2026-10-03T17:56:37.035880+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề luật thể thao, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: baseball, team, hit.",
+          "Dùng ít nhất một mẫu Mệnh lệnh; kiểm tra theo câu mẫu: Throw the ball to your partner."
+        ],
+        "sample": "Baseball is a team game. Hit the ball, then run. Catch it and throw it to your partner when it is your team's turn.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng động từ nguyên mẫu để giải thích các bước; don't + động từ để nói điều không được làm. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4464,15 +4798,16 @@
         },
         {
           "id": "34-v2",
-          "prompt": "Trong câu ‘I will help you tomorrow.’, ‘will’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn bè cần chọn đồ hóa trang. Bạn muốn đề nghị giúp. Bạn nói gì?",
           "choices": [
-            "chọn",
-            "sẽ",
-            "trang phục hóa trang",
-            "bữa tiệc"
+            "You were a party.",
+            "I will help you choose a costume.",
+            "I helped you last year.",
+            "A costume is my doctor."
           ],
           "answer": 1,
-          "explanation": "will nghĩa là sẽ. Ví dụ này gắn với chủ đề dự đoán."
+          "explanation": "Will help là đề nghị giúp ngay lúc nói."
         },
         {
           "id": "34-context",
@@ -4533,6 +4868,15 @@
         "checkedAt": "2026-10-03T17:56:37.100947+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề dự đoán, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: costume, party, will.",
+          "Dùng ít nhất một mẫu Will; kiểm tra theo câu mẫu: I will help you choose a costume."
+        ],
+        "sample": "Maybe I will go to the party. I need to choose a costume. Your advice is helpful.",
+        "commonError": "Tránh nhầm cấu trúc: Will + động từ nguyên mẫu dùng cho dự đoán, lời hứa hoặc quyết định ngay lúc nói. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4596,15 +4940,16 @@
         },
         {
           "id": "35-v2",
-          "prompt": "Trong câu ‘My shopping list has six items.’, ‘shopping list’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn chuẩn bị tiệc tối và cần biết còn trứng không. Bạn hỏi gì?",
           "choices": [
-            "danh sách mua sắm",
-            "nguyên liệu",
-            "rau",
-            "một ít / một vài"
+            "Do we have any eggs?",
+            "Who are the eggs?",
+            "When are you eggs?",
+            "Are eggs my hometown?"
           ],
           "answer": 0,
-          "explanation": "shopping list nghĩa là danh sách mua sắm. Ví dụ này gắn với chủ đề chuẩn bị bữa tối."
+          "explanation": "Any thường dùng trong câu hỏi về nguyên liệu có hay không."
         },
         {
           "id": "35-context",
@@ -4665,6 +5010,15 @@
         "checkedAt": "2026-10-03T17:56:37.387651+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề chuẩn bị bữa tối, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: ingredient, vegetable, shopping list.",
+          "Dùng ít nhất một mẫu Some / any; kiểm tra theo câu mẫu: Do we have any eggs?"
+        ],
+        "sample": "We are planning a dinner party. My shopping list has some vegetables. Do we have any eggs for the recipe?",
+        "commonError": "Tránh nhầm cấu trúc: Some thường dùng trong câu khẳng định; any thường dùng trong câu hỏi/phủ định. Some cũng dùng trong lời mời/đề nghị. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4728,15 +5082,16 @@
         },
         {
           "id": "36-v2",
-          "prompt": "Trong câu ‘Dinner will be ready in a minute.’, ‘minute’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Không đủ nguyên liệu cho món đã định, bạn đề nghị giải pháp. Câu nào phù hợp?",
           "choices": [
-            "sửa / khắc phục",
-            "công thức nấu ăn",
-            "sẵn sàng",
-            "phút"
+            "We must serve no food forever.",
+            "A recipe is a car.",
+            "Minutes eat rice.",
+            "We can make soup instead."
           ],
           "answer": 3,
-          "explanation": "minute nghĩa là phút. Ví dụ này gắn với chủ đề khắc phục."
+          "explanation": "Instead diễn đạt làm một món khác thay món đã định."
         },
         {
           "id": "36-context",
@@ -4797,6 +5152,15 @@
         "checkedAt": "2026-10-03T17:56:37.424766+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề khắc phục, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: fix, recipe, minute.",
+          "Dùng ít nhất một mẫu Enough; kiểm tra theo câu mẫu: We have enough rice for dinner."
+        ],
+        "sample": "We can fix this dinner problem. We have enough rice, but this recipe needs eggs. I will make soup instead, and it will be ready soon.",
+        "commonError": "Tránh nhầm cấu trúc: Enough đứng trước danh từ nhưng sau tính từ: enough rice; warm enough. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4860,15 +5224,16 @@
         },
         {
           "id": "37-v2",
-          "prompt": "Trong câu ‘What is your opinion?’, ‘opinion’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn nghe ý kiến khác với mình. Câu nào bất đồng lịch sự?",
           "choices": [
-            "không đồng ý",
-            "thân thiện",
-            "ý kiến",
-            "đồng ý"
+            "You must never speak.",
+            "Agree is my hometown.",
+            "I see your point, but I disagree.",
+            "Your opinion is stupid."
           ],
           "answer": 2,
-          "explanation": "opinion nghĩa là ý kiến. Ví dụ này gắn với chủ đề nêu ý kiến."
+          "explanation": "I see your point công nhận ý người khác trước khi bất đồng."
         },
         {
           "id": "37-context",
@@ -4929,6 +5294,15 @@
         "checkedAt": "2026-10-03T17:56:37.504071+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề nêu ý kiến, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: agree, disagree, opinion.",
+          "Dùng ít nhất một mẫu Agree with; kiểm tra theo câu mẫu: I agree with your idea."
+        ],
+        "sample": "I agree with your opinion about the city. We can disagree politely about other things. I believe we can make it a friendly place.",
+        "commonError": "Tránh nhầm cấu trúc: Agree with someone là đồng ý với ai; I see your point, but ... thể hiện phản hồi lịch sự. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -4992,15 +5366,16 @@
         },
         {
           "id": "38-v2",
-          "prompt": "Trong câu ‘A new job is a big change.’, ‘change’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn thân từ quê nhà tới thăm. Câu nào giới thiệu đúng?",
           "choices": [
-            "thăm",
-            "sự thay đổi / thay đổi",
-            "bạn thân nhất",
-            "quê nhà"
+            "We are a menu.",
+            "This is my best friend from my hometown.",
+            "This is my car engine.",
+            "My hometown is a medicine."
           ],
           "answer": 1,
-          "explanation": "change nghĩa là sự thay đổi / thay đổi. Ví dụ này gắn với chủ đề bạn bè."
+          "explanation": "Best friend là bạn thân nhất; from my hometown nêu nơi hai người quen nhau."
         },
         {
           "id": "38-context",
@@ -5061,6 +5436,15 @@
         "checkedAt": "2026-10-03T17:56:37.472262+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề bạn bè, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: best friend, hometown, change.",
+          "Dùng ít nhất một mẫu Better / best; kiểm tra theo câu mẫu: This plan is better than the old one."
+        ],
+        "sample": "My best friend is visiting from my hometown. Life here is exciting. A new job might be a change that makes her life better.",
+        "commonError": "Tránh nhầm cấu trúc: Good có dạng so sánh hơn better, so sánh nhất best. Best friend là bạn thân nhất. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5124,15 +5508,16 @@
         },
         {
           "id": "39-v2",
-          "prompt": "Trong câu ‘Do not believe every promise.’, ‘believe’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn nghe một quảng cáo hứa kết quả quá tốt. Bạn nên làm gì trước?",
           "choices": [
-            "tin",
-            "quảng cáo",
-            "sản phẩm",
-            "khó tin"
+            "Check the information.",
+            "Believe every claim immediately.",
+            "Send money without checking.",
+            "Ignore all questions."
           ],
           "answer": 0,
-          "explanation": "believe nghĩa là tin. Ví dụ này gắn với chủ đề quảng cáo."
+          "explanation": "Check the information là kiểm chứng thông tin trước khi tin lời quảng cáo."
         },
         {
           "id": "39-context",
@@ -5193,6 +5578,15 @@
         "checkedAt": "2026-10-03T17:56:37.942856+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề quảng cáo, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: advertisement, product, believe.",
+          "Dùng ít nhất một mẫu Should + động từ; kiểm tra theo câu mẫu: You should check the information first."
+        ],
+        "sample": "This advertisement makes a big promise. We should check the information. We shouldn't believe every claim.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng should để khuyên kiểm tra thông tin; don't để cảnh báo. Lời quảng cáo cần được đối chiếu. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5256,15 +5650,16 @@
         },
         {
           "id": "40-v2",
-          "prompt": "Trong câu ‘I have a small role in the play.’, ‘role’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn thử một kỹ năng mới. Câu nào thể hiện mong muốn?",
           "choices": [
-            "quyết tâm / mục tiêu đầu năm",
-            "buổi thử vai",
-            "khu rừng",
-            "vai diễn"
+            "I tried it last year.",
+            "I never want to learn.",
+            "Something is my teacher.",
+            "I want to try something new."
           ],
           "answer": 3,
-          "explanation": "role nghĩa là vai diễn. Ví dụ này gắn với chủ đề thử điều mới."
+          "explanation": "Want to try nói mong muốn thử điều mới."
         },
         {
           "id": "40-context",
@@ -5325,6 +5720,15 @@
         "checkedAt": "2026-10-03T17:56:37.704092+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề thử điều mới, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: resolution, audition, role.",
+          "Dùng ít nhất một mẫu Want to / try to; kiểm tra theo câu mẫu: I want to try something new."
+        ],
+        "sample": "I want to try something new. I am nervous about the audition. I will take a chance.",
+        "commonError": "Tránh nhầm cấu trúc: Want to + động từ nói mong muốn; try to + động từ nói cố gắng làm việc gì. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5388,15 +5792,16 @@
         },
         {
           "id": "41-v2",
-          "prompt": "Trong câu ‘My yearly review is today.’, ‘review’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Nhóm muốn cải thiện chương trình. Lời nào giúp cùng hành động?",
           "choices": [
-            "khán giả",
-            "mục tiêu",
-            "buổi đánh giá / xem xét",
-            "làm việc nhóm"
+            "We never need a plan.",
+            "Where is your coffee?",
+            "We need to work together.",
+            "You must work alone forever."
           ],
           "answer": 2,
-          "explanation": "review nghĩa là buổi đánh giá / xem xét. Ví dụ này gắn với chủ đề làm việc nhóm."
+          "explanation": "Need to work together đặt nhu cầu cùng làm việc."
         },
         {
           "id": "41-context",
@@ -5457,6 +5862,15 @@
         "checkedAt": "2026-10-03T17:56:38.076912+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề làm việc nhóm, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: teamwork, audience, review.",
+          "Dùng ít nhất một mẫu Need to; kiểm tra theo câu mẫu: We need to work together."
+        ],
+        "sample": "Our team has a new goal. Teamwork helps us improve the show. We want the number of people in our audience to grow.",
+        "commonError": "Tránh nhầm cấu trúc: Need to + động từ diễn đạt điều cần làm để đạt mục tiêu. We need to work together. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5520,15 +5934,16 @@
         },
         {
           "id": "42-v2",
-          "prompt": "Trong câu ‘I hurt my arm yesterday.’, ‘hurt’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn đang đi bộ thì thấy một vụ cướp. Câu nào kể đúng thứ tự?",
           "choices": [
-            "cánh tay",
-            "làm đau / bị đau",
-            "tội phạm / vụ phạm tội",
-            "kẻ cướp"
+            "I never walked now.",
+            "I was walking when I saw the robber.",
+            "I will walk when I saw the robber.",
+            "I saw walking tomorrow."
           ],
           "answer": 1,
-          "explanation": "hurt nghĩa là làm đau / bị đau. Ví dụ này gắn với chủ đề kể sự cố."
+          "explanation": "Was walking là bối cảnh đang diễn ra, saw là sự kiện xen vào."
         },
         {
           "id": "42-context",
@@ -5589,6 +6004,15 @@
         "checkedAt": "2026-10-03T17:56:38.310736+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề kể sự cố, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: crime, robber, hurt.",
+          "Dùng ít nhất một mẫu Quá khứ tiếp diễn; kiểm tra theo câu mẫu: I was walking when I saw the robber."
+        ],
+        "sample": "I was walking when I saw a crime. The robber hurt his arm. I told a reporter what I saw, but I did not hurt myself.",
+        "commonError": "Tránh nhầm cấu trúc: Was/were + V-ing mô tả việc đang diễn ra trong quá khứ; quá khứ đơn nói việc xen vào. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5652,15 +6076,16 @@
         },
         {
           "id": "43-v2",
-          "prompt": "Trong câu ‘May I borrow some money?’, ‘borrow’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn cần mượn tiền. Câu nhờ nào lịch sự và đúng hướng cho mượn?",
           "choices": [
-            "mượn",
-            "ví",
-            "đã làm mất / bị mất",
-            "tiền"
+            "Could you lend me some money?",
+            "Could I lend you my money?",
+            "You are a money.",
+            "Money borrowed me."
           ],
           "answer": 0,
-          "explanation": "borrow nghĩa là mượn. Ví dụ này gắn với chủ đề nhờ giúp."
+          "explanation": "Người cần nhận tiền nhờ người kia lend me, cho mình mượn."
         },
         {
           "id": "43-context",
@@ -5721,6 +6146,15 @@
         "checkedAt": "2026-10-03T17:56:38.149293+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề nhờ giúp, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: wallet, lost, borrow.",
+          "Dùng ít nhất một mẫu Could you; kiểm tra theo câu mẫu: Could you lend me some money?"
+        ],
+        "sample": "I lost my wallet. Could you lend me some money? I need a plan B for getting home.",
+        "commonError": "Tránh nhầm cấu trúc: Could you + động từ nguyên mẫu là lời nhờ lịch sự; borrow là mượn, lend là cho mượn. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5784,15 +6218,16 @@
         },
         {
           "id": "44-v2",
-          "prompt": "Trong câu ‘Fruit is a good choice.’, ‘choice’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn đang chọn bữa ăn lành mạnh. Lựa chọn nào phù hợp mục tiêu?",
           "choices": [
-            "lành mạnh / tốt cho sức khỏe",
-            "đồ ăn ít dinh dưỡng",
-            "đói",
-            "lựa chọn"
+            "Eat only junk food every day.",
+            "Skip all food forever.",
+            "Buy food only for its color.",
+            "Choose fruit and vegetables."
           ],
           "answer": 3,
-          "explanation": "choice nghĩa là lựa chọn. Ví dụ này gắn với chủ đề lựa chọn lành mạnh."
+          "explanation": "Fruit và vegetables phù hợp lựa chọn ăn uống lành mạnh."
         },
         {
           "id": "44-context",
@@ -5853,6 +6288,15 @@
         "checkedAt": "2026-10-03T17:56:38.043149+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề lựa chọn lành mạnh, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: healthy, junk food, choice.",
+          "Dùng ít nhất một mẫu Because; kiểm tra theo câu mẫu: I choose fruit because it is healthy."
+        ],
+        "sample": "I want a healthy meal. I choose fruit instead of junk food. I buy vegetables at the supermarket.",
+        "commonError": "Tránh nhầm cấu trúc: Because nối hành động/ý kiến với lý do. I choose fruit because it is healthy. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -5916,15 +6360,16 @@
         },
         {
           "id": "45-v2",
-          "prompt": "Trong câu ‘We travel across the country.’, ‘across’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn lên đường bằng ô tô và chưa biết lộ trình. Bạn nên làm gì?",
           "choices": [
-            "địa điểm / cảnh đáng xem",
-            "dặm",
-            "băng qua / khắp",
-            "chuyến đi bằng ô tô"
+            "Start without knowing the destination.",
+            "Read only the restaurant menu.",
+            "Check the map before the road trip.",
+            "Ignore every road sign."
           ],
           "answer": 2,
-          "explanation": "across nghĩa là băng qua / khắp. Ví dụ này gắn với chủ đề đi đường dài."
+          "explanation": "Map giúp xác định đường đi cho road trip."
         },
         {
           "id": "45-context",
@@ -5985,6 +6430,15 @@
         "checkedAt": "2026-10-03T17:56:38.279934+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề đi đường dài, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: road trip, sight, across.",
+          "Dùng ít nhất một mẫu Across / through; kiểm tra theo câu mẫu: We travel across the country."
+        ],
+        "sample": "We are planning a road trip across the country. I will check the map. We want to see many sights.",
+        "commonError": "Tránh nhầm cấu trúc: Across thường nói đi từ phía này sang phía kia; through nói đi xuyên qua bên trong. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6048,15 +6502,16 @@
         },
         {
           "id": "46-v2",
-          "prompt": "Trong câu ‘This present is for my sister.’, ‘present’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn xin mượn kéo từ người bạn. Câu nào phù hợp?",
           "choices": [
-            "quên",
-            "món quà",
-            "mượn",
-            "cho mượn"
+            "Scissors borrow me.",
+            "May I borrow your scissors?",
+            "May I lend your scissors to you?",
+            "I am your scissors."
           ],
           "answer": 1,
-          "explanation": "present nghĩa là món quà. Ví dụ này gắn với chủ đề xin phép."
+          "explanation": "Borrow là mượn từ người khác; May I là xin phép."
         },
         {
           "id": "46-context",
@@ -6117,6 +6572,15 @@
         "checkedAt": "2026-10-03T17:56:38.551924+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề xin phép, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: borrow, lend, present.",
+          "Dùng ít nhất một mẫu May I; kiểm tra theo câu mẫu: May I borrow your scissors?"
+        ],
+        "sample": "May I borrow your scissors? I need to prepare a present. I will not forget to return them.",
+        "commonError": "Tránh nhầm cấu trúc: May I + động từ nguyên mẫu là cách xin phép lịch sự. May I borrow your pen? Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6180,15 +6644,16 @@
         },
         {
           "id": "47-v2",
-          "prompt": "Trong câu ‘I learned to cook as a teenager.’, ‘teenager’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn đang sửa xe và muốn kể bối cảnh khi điện thoại reo. Câu nào đúng?",
           "choices": [
-            "người tuổi thiếu niên",
-            "sửa chữa",
-            "ô tô",
-            "dụng cụ"
+            "I was fixing the car when the phone rang.",
+            "I will fix yesterday when it rang.",
+            "The car was me.",
+            "I fix tomorrow when it rang."
           ],
           "answer": 0,
-          "explanation": "teenager nghĩa là người tuổi thiếu niên. Ví dụ này gắn với chủ đề sửa xe."
+          "explanation": "Was fixing diễn tả công việc đang làm trong quá khứ."
         },
         {
           "id": "47-context",
@@ -6249,6 +6714,15 @@
         "checkedAt": "2026-10-03T17:56:38.654176+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề sửa xe, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: repair, car, teenager.",
+          "Dùng ít nhất một mẫu While + quá khứ tiếp diễn; kiểm tra theo câu mẫu: I was fixing the car when you called."
+        ],
+        "sample": "I was fixing the car when you called. The engine was making a noise. I needed another tool.",
+        "commonError": "Tránh nhầm cấu trúc: While nối một hành động đang diễn ra với hành động khác: While I was working, the phone rang. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6312,15 +6786,16 @@
         },
         {
           "id": "48-v2",
-          "prompt": "Trong câu ‘She has visited three museums.’, ‘visited’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn biết người bạn đã từng tới bảo tàng này chưa. Bạn hỏi gì?",
           "choices": [
-            "đã từng",
-            "chưa bao giờ / không bao giờ",
-            "trải nghiệm / kinh nghiệm",
-            "đã thăm"
+            "Did you visit tomorrow?",
+            "Are you this museum?",
+            "Will you visited yesterday?",
+            "Have you ever visited this museum?"
           ],
           "answer": 3,
-          "explanation": "visited nghĩa là đã thăm. Ví dụ này gắn với chủ đề trải nghiệm."
+          "explanation": "Have you ever visited hỏi trải nghiệm không nêu một thời điểm quá khứ cụ thể."
         },
         {
           "id": "48-context",
@@ -6381,6 +6856,15 @@
         "checkedAt": "2026-10-03T17:56:38.697750+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề trải nghiệm, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: ever, never, visited.",
+          "Dùng ít nhất một mẫu Hiện tại hoàn thành; kiểm tra theo câu mẫu: Have you ever visited this museum?"
+        ],
+        "sample": "Have you ever visited this museum? I have never been here before. This is a new experience for me.",
+        "commonError": "Tránh nhầm cấu trúc: Have/has + phân từ quá khứ nói trải nghiệm không nêu thời điểm cụ thể. Ever thường dùng trong câu hỏi. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6444,15 +6928,16 @@
         },
         {
           "id": "49-v2",
-          "prompt": "Trong câu ‘Keep this secret safe.’, ‘secret’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn tới bảo tàng để tìm hiểu lịch sử. Câu nào nói mục đích?",
           "choices": [
-            "nhiệm vụ",
-            "thông tin",
-            "bí mật",
-            "điệp viên"
+            "I learn because museum is me.",
+            "I visit to yesterday.",
+            "I visit the museum to learn about history.",
+            "I visit history under a museum."
           ],
           "answer": 2,
-          "explanation": "secret nghĩa là bí mật. Ví dụ này gắn với chủ đề tìm thông tin."
+          "explanation": "To learn diễn đạt mục đích của việc tới bảo tàng."
         },
         {
           "id": "49-context",
@@ -6513,6 +6998,15 @@
         "checkedAt": "2026-10-03T17:56:38.767235+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề tìm thông tin, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: spy, mission, secret.",
+          "Dùng ít nhất một mẫu To chỉ mục đích; kiểm tra theo câu mẫu: I visit the museum to learn about history."
+        ],
+        "sample": "Our mission is to find information. We visit the museum to learn about spies. The operation is interesting.",
+        "commonError": "Tránh nhầm cấu trúc: To + động từ nguyên mẫu diễn đạt mục đích: I go to the museum to learn about spies. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6576,15 +7070,16 @@
         },
         {
           "id": "50-v2",
-          "prompt": "Trong câu ‘Please read the directions carefully.’, ‘directions’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn làm báo cáo và chưa hiểu yêu cầu của giáo viên. Bạn nên nói gì?",
           "choices": [
-            "hiểu",
-            "chỉ dẫn / hướng dẫn",
-            "bài báo cáo",
-            "lớp học"
+            "Where is your car engine?",
+            "Could you explain the directions, please?",
+            "I understand everything; no questions.",
+            "Directions is my birthday."
           ],
           "answer": 1,
-          "explanation": "directions nghĩa là chỉ dẫn / hướng dẫn. Ví dụ này gắn với chủ đề trở lại trường."
+          "explanation": "Xin giải thích directions giúp làm rõ chỉ dẫn trước khi làm bài."
         },
         {
           "id": "50-context",
@@ -6645,6 +7140,15 @@
         "checkedAt": "2026-10-03T17:56:38.924249+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề trở lại trường, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: report, class, directions.",
+          "Dùng ít nhất một mẫu Have been + V-ing; kiểm tra theo câu mẫu: I have been preparing my report."
+        ],
+        "sample": "I want to go back to school. I have been preparing my report. I need to understand the directions.",
+        "commonError": "Tránh nhầm cấu trúc: Have/has been + V-ing nói hành động bắt đầu trong quá khứ và tiếp diễn/gần đây: I have been studying. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6708,15 +7212,16 @@
         },
         {
           "id": "51-v2",
-          "prompt": "Trong câu ‘I train three times a week.’, ‘train’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn muốn xây thói quen học mỗi ngày. Kế hoạch nào phù hợp?",
           "choices": [
-            "tập luyện",
-            "thói quen",
-            "cuộc chạy marathon",
-            "một chút"
+            "Practice a little every day.",
+            "Study once and never return.",
+            "Wait a year before practicing.",
+            "Give up after one mistake."
           ],
           "answer": 0,
-          "explanation": "train nghĩa là tập luyện. Ví dụ này gắn với chủ đề thói quen tốt."
+          "explanation": "A little every day là luyện ít nhưng đều đặn."
         },
         {
           "id": "51-context",
@@ -6777,6 +7282,15 @@
         "checkedAt": "2026-10-03T17:56:38.921320+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề thói quen tốt, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: habit, marathon, train.",
+          "Dùng ít nhất một mẫu Hiện tại đơn và tần suất; kiểm tra theo câu mẫu: She trains a little every day."
+        ],
+        "sample": "My goal is to build a good habit. I train a little every day. I practice regularly.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng hiện tại đơn với every day/regularly để nói thói quen. Một việc nhỏ lặp lại có thể giúp đạt mục tiêu. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
     {
@@ -6840,15 +7354,16 @@
         },
         {
           "id": "52-v2",
-          "prompt": "Trong câu ‘You can succeed with practice.’, ‘succeed’ có nghĩa là gì?",
+          "kind": "scenario",
+          "prompt": "Bạn thất bại một lần nhưng muốn tiếp tục mục tiêu. Câu nào phù hợp?",
           "choices": [
-            "cơ hội / sự thử sức",
-            "sự nghiệp",
-            "thất bại",
-            "thành công"
+            "I will never try again.",
+            "I succeeded before I began.",
+            "Failure is my birthday.",
+            "I will try again and not give up."
           ],
           "answer": 3,
-          "explanation": "succeed nghĩa là thành công. Ví dụ này gắn với chủ đề nhìn lại."
+          "explanation": "Try again và not give up thể hiện quyết tâm tiếp tục."
         },
         {
           "id": "52-context",
@@ -6909,6 +7424,15 @@
         "checkedAt": "2026-10-03T17:56:39.117491+00:00",
         "pageStatus": 200,
         "embedStatus": "URL discovered in official lesson; playback validated separately."
+      },
+      "practiceGuide": {
+        "criteria": [
+          "Viết 3–5 câu đúng chủ đề nhìn lại, có chủ ngữ và động từ.",
+          "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: chance, career, succeed.",
+          "Dùng ít nhất một mẫu Quá khứ và tương lai; kiểm tra theo câu mẫu: Next year, I am going to learn a new skill."
+        ],
+        "sample": "I want to take a chance in my career. Sometimes I fail, but I do not give up. Next year, I am going to learn a new skill.",
+        "commonError": "Tránh nhầm cấu trúc: Dùng quá khứ đơn để kể việc đã xong; be going to/will để nói kế hoạch hay dự đoán tiếp theo. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     }
   ]
