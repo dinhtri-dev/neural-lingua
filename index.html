@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-aOqHM8YbKMzpjNFE1uW4Im77RiGKZgq0/OGbTOpVqAI='; style-src 'sha256-mjS2UCkNJtH9EnW7jIHkkHYU7l4sgdMHHChcpG9FIvw='; connect-src https://translate.googleapis.com; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta charset="UTF-8">
   <title>Neural-Lingua Translator</title>
   <style>
@@ -88,6 +90,7 @@
 <body>
 
 <h2>Neural-Lingua Translator</h2>
+<p>Văn bản được gửi tới dịch vụ dịch bên ngoài khi bạn bấm Dịch. Tránh nhập thông tin riêng tư.</p>
 
 <div class="translator-wrapper">
 
@@ -104,18 +107,18 @@
       <option value="zh">Tiếng Trung</option>
     </select>
     <div class="text-box">
-      <textarea id="textInput" placeholder="Nhập nội dung cần dịch..." oninput="updateCharCount()"></textarea>
+      <textarea id="textInput" placeholder="Nhập nội dung cần dịch..." maxlength="5000"></textarea>
       <div class="char-count" id="charCount">0 / 5000</div>
       <div class="controls">
-        <button onclick="startRecording()">🎤 Ghi âm</button>
-        <button onclick="translateText()">🔁 Dịch</button>
+        <button id="recordButton">🎤 Ghi âm</button>
+        <button id="translateButton">🔁 Dịch</button>
       </div>
     </div>
   </div>
 
   <!-- Nút đảo chiều -->
   <div class="switch-button">
-    <button onclick="swapLanguages()">⇄</button>
+    <button id="swapButton">⇄</button>
   </div>
 
   <!-- Bên phải -->
@@ -133,7 +136,7 @@
       <textarea id="translatedText" placeholder="Bản dịch..." readonly></textarea>
       <div class="translated-label">Bản dịch</div>
       <div class="controls">
-        <button onclick="playTranslation()">🔊 Nghe</button>
+        <button id="playButton">🔊 Nghe</button>
       </div>
     </div>
   </div>
@@ -151,24 +154,33 @@
     const target = document.getElementById("targetLanguage");
     const temp = source.value;
     source.value = target.value;
-    target.value = temp;
+    target.value = temp === 'auto' ? (detectedLanguage || 'vi') : temp;
 
     const input = document.getElementById("textInput");
     const output = document.getElementById("translatedText");
     const tempText = input.value;
-    input.value = output.value;
+    input.value = output.value.slice(0, 5000);
     output.value = tempText;
 
     updateCharCount();
   }
 
+  let detectedLanguage = 'vi';
+  let activeRequest = null;
+  let requestNumber = 0;
   async function translateText() {
+    const number = ++requestNumber;
+    if (activeRequest) activeRequest.abort();
+    activeRequest = new AbortController();
+    const controller = activeRequest;
+    const timeout = setTimeout(() => controller.abort(), 15000);
     const text = document.getElementById("textInput").value.trim();
     const from = document.getElementById("sourceLanguage").value;
     const to = document.getElementById("targetLanguage").value;
     const output = document.getElementById("translatedText");
 
-    if (!text) {
+    if (!text || text.length > 5000) {
+      clearTimeout(timeout);
       output.value = "Vui lòng nhập nội dung.";
       return;
     }
@@ -177,12 +189,18 @@
 
     try {
       const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURIComponent(text)}`;
-      const res = await fetch(url);
+      const res = await fetch(url, {signal: controller.signal, credentials: 'omit', referrerPolicy: 'no-referrer'});
+      if (!res.ok) throw new Error('Translation unavailable');
       const data = await res.json();
-      output.value = data[0][0][0];
+      if (number !== requestNumber) return;
+      if (!Array.isArray(data[0])) throw new Error('Invalid response');
+      detectedLanguage = ['vi','en','fr','es','ja','ko','zh'].includes(data[2]) ? data[2] : 'vi';
+      output.value = data[0].filter(Array.isArray).map(segment => typeof segment[0] === 'string' ? segment[0] : '').join('');
     } catch (err) {
-      console.error(err);
-      output.value = "⚠️ Không thể dịch.";
+      if (number !== requestNumber) return;
+      output.value = "⚠️ Không thể dịch. Kiểm tra mạng và thử lại.";
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
@@ -194,6 +212,7 @@
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
+    speechSynthesis.cancel();
     speechSynthesis.speak(utterance);
   }
 
@@ -205,7 +224,8 @@
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    recognition.lang = document.getElementById("sourceLanguage").value || 'vi';
+    const source = document.getElementById('sourceLanguage').value;
+    recognition.lang = source === 'auto' ? (detectedLanguage || 'vi') : source;
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
@@ -213,7 +233,7 @@
 
     recognition.onresult = function(event) {
       const transcript = event.results[0][0].transcript;
-document.getElementById("textInput").value = transcript;
+document.getElementById("textInput").value = transcript.slice(0, 5000);
       updateCharCount();
     };
 
@@ -222,7 +242,12 @@ document.getElementById("textInput").value = transcript;
     };
   }
 
-  window.speechSynthesis.onvoiceschanged = () => {
+  document.getElementById('textInput').addEventListener('input', updateCharCount);
+  document.getElementById('translateButton').addEventListener('click', translateText);
+  document.getElementById('recordButton').addEventListener('click', startRecording);
+  document.getElementById('swapButton').addEventListener('click', swapLanguages);
+  document.getElementById('playButton').addEventListener('click', playTranslation);
+  if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = () => {
     speechSynthesis.getVoices(); // load danh sách voice
   };
 </script>
