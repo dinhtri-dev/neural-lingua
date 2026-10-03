@@ -111,10 +111,10 @@
           "kind": "scenario",
           "prompt": "Bạn mới gặp một người. Câu nào vừa chào vừa giới thiệu tên bạn?",
           "choices": [
-            "Where is Linh?",
-            "She is Linh.",
+            "Her name is Linh.",
+            "How do I get to the gym?",
             "Hello, I am Linh.",
-            "Goodbye, Linh."
+            "Goodbye, I have to go."
           ],
           "answer": 2,
           "explanation": "Dùng hello để chào và I am để tự giới thiệu."
@@ -185,7 +185,7 @@
           "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: hello, welcome, name.",
           "Dùng ít nhất một mẫu I am / You are; kiểm tra theo câu mẫu: I am Linh."
         ],
-        "sample": "Hello! I am Linh. I am a new student. Nice to meet you.",
+        "sample": "Hello, my name is Linh. Welcome to my new apartment. Nice to meet you.",
         "commonError": "Tránh nhầm cấu trúc: Dùng I am (I'm) để giới thiệu bản thân. You are (You're) nói về người đối diện. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     },
@@ -253,10 +253,10 @@
           "kind": "scenario",
           "prompt": "Bạn chưa biết tên người hàng xóm mới. Bạn hỏi gì?",
           "choices": [
-            "How is the weather?",
+            "Where do you live?",
             "What is your name?",
-            "Where is my pen?",
-            "What is my name?"
+            "What is my name?",
+            "Where do you work?"
           ],
           "answer": 1,
           "explanation": "Your name hỏi tên người đối diện."
@@ -396,9 +396,9 @@
           "prompt": "Bạn gọi điện và muốn hỏi người kia đang ở đâu. Câu nào phù hợp?",
           "choices": [
             "Where are you?",
-            "Who is your teacher?",
-            "What is your name?",
-            "Are you hungry?"
+            "Where are you from?",
+            "When will you arrive?",
+            "Who is calling?"
           ],
           "answer": 0,
           "explanation": "Where hỏi vị trí; you chỉ người đang nghe máy."
@@ -537,9 +537,9 @@
           "kind": "scenario",
           "prompt": "Bạn thấy một vật lạ trên bàn và muốn biết đó là gì. Bạn hỏi gì?",
           "choices": [
-            "Who is she?",
-            "Where are you from?",
-            "How are you?",
+            "Where is it?",
+            "Whose bag is it?",
+            "How much is it?",
             "What is it?"
           ],
           "answer": 3,
@@ -679,10 +679,10 @@
           "kind": "scenario",
           "prompt": "Bạn cần tìm bếp trong căn hộ. Câu hỏi nào giúp bạn?",
           "choices": [
-            "Who is the cook?",
-            "What is your job?",
+            "Who is cooking dinner?",
+            "What would you like for dinner?",
             "Where is the kitchen?",
-            "When is dinner?"
+            "When will dinner be ready?"
           ],
           "answer": 2,
           "explanation": "Hỏi vị trí phòng dùng Where is và tên phòng."
@@ -964,9 +964,9 @@
           "prompt": "Bạn thấy bạn mình gõ thư điện tử ngay lúc này. Câu nào mô tả đúng?",
           "choices": [
             "She is writing an email.",
-            "She wrote an email yesterday.",
-            "She will write tomorrow.",
-            "She never writes emails."
+            "She writes emails every Monday.",
+            "She wrote the email yesterday.",
+            "She will write the email tomorrow."
           ],
           "answer": 0,
           "explanation": "Is writing diễn tả hành động đang diễn ra."
@@ -1105,9 +1105,9 @@
           "kind": "scenario",
           "prompt": "Bạn đi bộ tới nơi làm việc mỗi ngày. Câu nào nói thói quen này?",
           "choices": [
-            "I walked there once.",
-            "I am at home now.",
-            "I will take a taxi tomorrow.",
+            "I walked to work yesterday.",
+            "I am walking to work now.",
+            "I will walk to work tomorrow.",
             "I walk to work every day."
           ],
           "answer": 3,
@@ -1247,10 +1247,10 @@
           "kind": "scenario",
           "prompt": "Ngoài trời đang mưa, bạn muốn báo cho bạn mình. Bạn nói gì?",
           "choices": [
-            "I am a rainy person.",
-            "The rain was last week.",
+            "It is sunny today.",
+            "It will rain tomorrow.",
             "It is rainy today.",
-            "It is sunny today."
+            "It was rainy last week."
           ],
           "answer": 2,
           "explanation": "Rainy mô tả thời tiết có mưa trong ngày hôm nay."
@@ -1389,10 +1389,10 @@
           "kind": "scenario",
           "prompt": "Bạn muốn mời bạn bè ghé nhà mình. Lời mời nào phù hợp?",
           "choices": [
-            "Where is your office?",
+            "I am going home now.",
             "Come over to my home.",
-            "Go away from my home.",
-            "I cannot visit you."
+            "I will come to your home.",
+            "I cannot have visitors today."
           ],
           "answer": 1,
           "explanation": "Come over là lời mời ghé thăm nhà."
@@ -1532,9 +1532,9 @@
           "prompt": "Bạn cần gửi thư. Bạn nên tìm địa điểm nào?",
           "choices": [
             "The post office.",
-            "The gym.",
-            "The movie theater.",
-            "The restaurant."
+            "The library.",
+            "The bank.",
+            "The supermarket."
           ],
           "answer": 0,
           "explanation": "Post office là bưu điện, phù hợp việc gửi thư."
@@ -1673,9 +1673,9 @@
           "kind": "scenario",
           "prompt": "Bạn giới thiệu cha mẹ với một người bạn. Câu nào phù hợp?",
           "choices": [
-            "This is my classroom.",
-            "They are my shoes.",
-            "That is your office.",
+            "These are my classmates.",
+            "These are my children.",
+            "These are my neighbors.",
             "These are my parents."
           ],
           "answer": 3,
@@ -1815,10 +1815,10 @@
           "kind": "scenario",
           "prompt": "Bạn buồn chán vì không có việc gì làm. Lời đề xuất nào giúp ích?",
           "choices": [
-            "It is your umbrella.",
-            "My name is Anna.",
+            "The museum is closed today.",
+            "I prefer to stay home and do nothing.",
             "Let's visit a museum.",
-            "Let's do nothing forever."
+            "I visited the museum yesterday."
           ],
           "answer": 2,
           "explanation": "Let's đưa đề xuất một hoạt động để làm cùng nhau."
@@ -1957,10 +1957,10 @@
           "kind": "scenario",
           "prompt": "Bạn thử đôi giày và muốn nói chúng dễ chịu. Bạn nói gì?",
           "choices": [
-            "Those shoes is comfortable.",
+            "I bought these shoes yesterday.",
             "These shoes are comfortable.",
-            "This shoes is comfortable.",
-            "I am comfortable shoes."
+            "These shoes are too tight.",
+            "I like the color of these shoes."
           ],
           "answer": 1,
           "explanation": "Shoes là số nhiều, đi với these và are."
@@ -2100,9 +2100,9 @@
           "prompt": "Bạn thấy nhiều người đi bộ trong công viên. Câu nào nói việc đang diễn ra?",
           "choices": [
             "They are walking in the park.",
-            "They walked last year.",
-            "They will walk tomorrow.",
-            "They never leave home."
+            "They walk in the park every Sunday.",
+            "They walked in the park yesterday.",
+            "They will walk in the park tomorrow."
           ],
           "answer": 0,
           "explanation": "They are walking là hành động hiện tại, đang diễn ra."
@@ -2241,9 +2241,9 @@
           "kind": "scenario",
           "prompt": "Bạn muốn biết quê quán của người mới quen. Bạn hỏi gì?",
           "choices": [
-            "Where is my phone?",
-            "When do you eat?",
-            "What do you want to buy?",
+            "Where are you now?",
+            "Where are you going?",
+            "When did you get here?",
             "Where are you from?"
           ],
           "answer": 3,
@@ -2383,10 +2383,10 @@
           "kind": "scenario",
           "prompt": "Bạn muốn hẹn xem phim vào thứ Sáu. Bạn hỏi gì?",
           "choices": [
-            "Is Friday your name?",
-            "Can Friday drive a car?",
+            "Did you see the film last Friday?",
+            "What time is your class on Monday?",
             "Are you free on Friday?",
-            "Are you free at Monday?"
+            "Are you free on Saturday?"
           ],
           "answer": 2,
           "explanation": "Free nghĩa là rảnh; on dùng với ngày trong tuần."
@@ -2525,10 +2525,10 @@
           "kind": "scenario",
           "prompt": "Bạn muốn nói mình thường uống cà phê buổi sáng. Câu nào phù hợp?",
           "choices": [
-            "I am buying a cup now.",
+            "I never drink coffee in the morning.",
             "I often drink coffee in the morning.",
-            "I drank coffee once last year.",
-            "I will buy a cup tomorrow."
+            "I drank coffee yesterday morning.",
+            "I will buy coffee tomorrow."
           ],
           "answer": 1,
           "explanation": "Often thể hiện tần suất thường xuyên."
@@ -2668,9 +2668,9 @@
           "prompt": "Bạn nhận việc mới và chưa biết ngày bắt đầu. Bạn hỏi gì?",
           "choices": [
             "When do I start?",
-            "What is the weather like?",
-            "Where is your mother?",
-            "How many shoes do you have?"
+            "Where do I work?",
+            "What will I do at work?",
+            "Who is my manager?"
           ],
           "answer": 0,
           "explanation": "When hỏi thời điểm bắt đầu công việc."
@@ -2809,9 +2809,9 @@
           "kind": "scenario",
           "prompt": "Nhà tuyển dụng hỏi bạn biết làm gì. Câu nào nói khả năng?",
           "choices": [
-            "I drove a car yesterday.",
-            "I want a blue car.",
-            "I am near a car.",
+            "I drove to work yesterday.",
+            "I would like a driving job.",
+            "I own a small car.",
             "I can drive a car."
           ],
           "answer": 3,
@@ -2951,10 +2951,10 @@
           "kind": "scenario",
           "prompt": "Bạn được mời tới tiệc nhưng phải học cho bài thi lái xe. Bạn nói gì?",
           "choices": [
-            "My test is a party.",
-            "Where is your umbrella?",
+            "I have already passed my driving test.",
+            "The party is on Saturday evening.",
             "Sorry, I have to study for my driving test.",
-            "Yes, I am free and have no test."
+            "Thank you, I can come to the party."
           ],
           "answer": 2,
           "explanation": "Have to study nói nghĩa vụ khiến bạn chưa thể nhận lời mời."
@@ -3093,10 +3093,10 @@
           "kind": "scenario",
           "prompt": "Bạn lên kế hoạch làm chương trình thiếu nhi vào mùa hè tới. Câu nào phù hợp?",
           "choices": [
-            "Summer is my name.",
+            "We are going to take a holiday next summer.",
             "We are going to make a children's show next summer.",
-            "We made the show last summer.",
-            "We are watching yesterday."
+            "We made a children's show last summer.",
+            "We watch a children's show every summer."
           ],
           "answer": 1,
           "explanation": "Going to nói dự định; next summer là mùa hè tới."
@@ -3236,9 +3236,9 @@
           "prompt": "Bạn đứng trước xe bán đồ ăn và muốn gọi bánh mì kẹp lịch sự. Bạn nói gì?",
           "choices": [
             "I would like to order a sandwich, please.",
-            "I am a food truck.",
-            "The sandwich ordered me.",
-            "Go away, menu!"
+            "Could I see the drink menu, please?",
+            "I would like to pay for my meal, please.",
+            "Could I have a glass of water, please?"
           ],
           "answer": 0,
           "explanation": "Would like to order là cách gọi món lịch sự."
@@ -3377,9 +3377,9 @@
           "kind": "scenario",
           "prompt": "Bạn kể cuối tuần trước đã ở công viên với bạn bè. Câu nào đúng?",
           "choices": [
-            "We will be at the park tomorrow.",
-            "We are at the park now.",
-            "We is at the park yesterday.",
+            "My vacation is next week.",
+            "I am planning my vacation now.",
+            "My vacation was terrible.",
             "We were at the park last weekend."
           ],
           "answer": 3,
@@ -3519,10 +3519,10 @@
           "kind": "scenario",
           "prompt": "Bạn chơi trò chơi trên điện thoại khi đi gần đường xe chạy. Lời cảnh báo nào phù hợp?",
           "choices": [
-            "Forget every car.",
-            "The road is your phone.",
+            "We can learn more facts when we get home.",
+            "The game starts tomorrow.",
             "Watch out! Be careful on this road.",
-            "Run without looking at the road."
+            "Keep playing and look only at your phone."
           ],
           "answer": 2,
           "explanation": "Watch out và be careful cảnh báo cần chú ý xung quanh."
@@ -3661,10 +3661,10 @@
           "kind": "scenario",
           "prompt": "Hàng xóm cần giúp chuyển đồ. Bạn muốn đưa lời khuyên cho nhóm. Câu nào phù hợp?",
           "choices": [
-            "We cannot find the kitchen.",
+            "Our neighbors should help us.",
             "We should help our neighbors.",
-            "We helped them last year.",
-            "We are their neighbors."
+            "We helped our neighbors yesterday.",
+            "We live next to our neighbors."
           ],
           "answer": 1,
           "explanation": "Should help đưa lời khuyên về việc nên làm."
@@ -3808,9 +3808,9 @@
           "prompt": "Bạn bị ốm và đau đầu. Lời khuyên nào phù hợp?",
           "choices": [
             "You should rest at home.",
-            "You should run all night.",
-            "Headache is my name.",
-            "You must buy new shoes."
+            "You should work all night.",
+            "You rested at home yesterday.",
+            "You will go to work next week."
           ],
           "answer": 0,
           "explanation": "Rest at home là nghỉ ở nhà khi bị ốm; bài tập ngôn ngữ không thay tư vấn y tế."
@@ -3949,9 +3949,9 @@
           "kind": "scenario",
           "prompt": "Bạn đã đỗ bài thi lái xe hôm qua. Câu nào kể đúng kết quả?",
           "choices": [
-            "I will take it next year.",
-            "I failed the test yesterday.",
-            "My license is a sandwich.",
+            "I failed my driving test yesterday.",
+            "I am taking my driving test now.",
+            "I will take my driving test tomorrow.",
             "I passed my driving test yesterday."
           ],
           "answer": 3,
@@ -4091,10 +4091,10 @@
           "kind": "scenario",
           "prompt": "Bạn kể nơi mình đã lớn lên. Câu nào phù hợp?",
           "choices": [
-            "I am growing a town.",
-            "I never had a childhood.",
+            "I will move to a small town next year.",
+            "I would like to visit a small town.",
             "I grew up in a small town.",
-            "I will grow up yesterday."
+            "I live in a small town now."
           ],
           "answer": 2,
           "explanation": "Grew up diễn đạt đã lớn lên, phù hợp kể ký ức thời nhỏ."
@@ -4233,10 +4233,10 @@
           "kind": "scenario",
           "prompt": "Bạn ở chợ cá, muốn hỏi giá cá. Bạn nói gì?",
           "choices": [
-            "How old is the price?",
+            "How fresh is this fish?",
             "How much is this fish?",
-            "Who is this fish?",
-            "Where is my license?"
+            "Where did this fish come from?",
+            "How much fish do you have?"
           ],
           "answer": 1,
           "explanation": "How much is hỏi giá món hàng."
@@ -4376,9 +4376,9 @@
           "prompt": "Bạn muốn biết cách đi nhanh nhất tới sân vận động. Bạn hỏi gì?",
           "choices": [
             "What is the fastest way to the stadium?",
-            "What is your favorite sandwich?",
-            "Who is your doctor?",
-            "When is your childhood?"
+            "What time does the game start?",
+            "Where can I buy a ticket?",
+            "How much does the train ticket cost?"
           ],
           "answer": 0,
           "explanation": "Fastest way hỏi phương án đi nhanh nhất tới địa điểm."
@@ -4517,9 +4517,9 @@
           "kind": "scenario",
           "prompt": "Bạn làm chương trình thiếu nhi với cộng sự, muốn nghe ý kiến của họ. Bạn hỏi gì?",
           "choices": [
-            "What is the price of this fish?",
-            "Where is your driving test?",
-            "Who is this umbrella?",
+            "When does the show start?",
+            "Who is going to watch the show?",
+            "How long is the show?",
             "What do you think of the show?"
           ],
           "answer": 3,
@@ -4659,10 +4659,10 @@
           "kind": "scenario",
           "prompt": "Bạn hướng dẫn đồng đội bắt bóng chày. Câu nào phù hợp?",
           "choices": [
-            "The ball is my hometown.",
-            "Sleep instead of playing.",
+            "Put down the ball and leave the field.",
+            "Watch the game from the stands.",
             "Catch the ball, then throw it to your partner.",
-            "Eat the ball for dinner."
+            "Keep the ball in your hand and do not throw it."
           ],
           "answer": 2,
           "explanation": "Catch và throw là bắt và ném, dùng dạng nguyên mẫu để chỉ dẫn."
@@ -4801,10 +4801,10 @@
           "kind": "scenario",
           "prompt": "Bạn bè cần chọn đồ hóa trang. Bạn muốn đề nghị giúp. Bạn nói gì?",
           "choices": [
-            "You were a party.",
+            "I will help you plan the menu.",
             "I will help you choose a costume.",
-            "I helped you last year.",
-            "A costume is my doctor."
+            "I helped you choose a costume last year.",
+            "I need your help to choose my costume."
           ],
           "answer": 1,
           "explanation": "Will help là đề nghị giúp ngay lúc nói."
@@ -4944,9 +4944,9 @@
           "prompt": "Bạn chuẩn bị tiệc tối và cần biết còn trứng không. Bạn hỏi gì?",
           "choices": [
             "Do we have any eggs?",
-            "Who are the eggs?",
-            "When are you eggs?",
-            "Are eggs my hometown?"
+            "How many eggs do we need?",
+            "Where can we buy eggs?",
+            "When should we add the eggs?"
           ],
           "answer": 0,
           "explanation": "Any thường dùng trong câu hỏi về nguyên liệu có hay không."
@@ -5085,9 +5085,9 @@
           "kind": "scenario",
           "prompt": "Không đủ nguyên liệu cho món đã định, bạn đề nghị giải pháp. Câu nào phù hợp?",
           "choices": [
-            "We must serve no food forever.",
-            "A recipe is a car.",
-            "Minutes eat rice.",
+            "We have all the ingredients for the original recipe.",
+            "We can make the original dish without changing anything.",
+            "We should wait until next week to cook.",
             "We can make soup instead."
           ],
           "answer": 3,
@@ -5227,10 +5227,10 @@
           "kind": "scenario",
           "prompt": "Bạn nghe ý kiến khác với mình. Câu nào bất đồng lịch sự?",
           "choices": [
-            "You must never speak.",
-            "Agree is my hometown.",
+            "I have not heard your opinion yet.",
+            "I want you to stop sharing your opinion.",
             "I see your point, but I disagree.",
-            "Your opinion is stupid."
+            "I agree with every part of your opinion."
           ],
           "answer": 2,
           "explanation": "I see your point công nhận ý người khác trước khi bất đồng."
@@ -5369,10 +5369,10 @@
           "kind": "scenario",
           "prompt": "Bạn thân từ quê nhà tới thăm. Câu nào giới thiệu đúng?",
           "choices": [
-            "We are a menu.",
+            "This is my best friend from my new job.",
             "This is my best friend from my hometown.",
-            "This is my car engine.",
-            "My hometown is a medicine."
+            "This is my new colleague from work.",
+            "This is my neighbor from this city."
           ],
           "answer": 1,
           "explanation": "Best friend là bạn thân nhất; from my hometown nêu nơi hai người quen nhau."
@@ -5512,9 +5512,9 @@
           "prompt": "Bạn nghe một quảng cáo hứa kết quả quá tốt. Bạn nên làm gì trước?",
           "choices": [
             "Check the information.",
-            "Believe every claim immediately.",
-            "Send money without checking.",
-            "Ignore all questions."
+            "Buy it now without reading the details.",
+            "Believe every promise in the advertisement.",
+            "Send money before checking the product."
           ],
           "answer": 0,
           "explanation": "Check the information là kiểm chứng thông tin trước khi tin lời quảng cáo."
@@ -5653,9 +5653,9 @@
           "kind": "scenario",
           "prompt": "Bạn muốn thử một kỹ năng mới. Câu nào thể hiện mong muốn?",
           "choices": [
-            "I tried it last year.",
-            "I never want to learn.",
-            "Something is my teacher.",
+            "I tried that activity last year.",
+            "I already know how to do it.",
+            "I would rather avoid trying anything new.",
             "I want to try something new."
           ],
           "answer": 3,
@@ -5795,10 +5795,10 @@
           "kind": "scenario",
           "prompt": "Nhóm muốn cải thiện chương trình. Lời nào giúp cùng hành động?",
           "choices": [
-            "We never need a plan.",
-            "Where is your coffee?",
+            "We should each work alone and avoid discussion.",
+            "We have already finished the show.",
             "We need to work together.",
-            "You must work alone forever."
+            "We worked together last year."
           ],
           "answer": 2,
           "explanation": "Need to work together đặt nhu cầu cùng làm việc."
@@ -5937,10 +5937,10 @@
           "kind": "scenario",
           "prompt": "Bạn đang đi bộ thì thấy một vụ cướp. Câu nào kể đúng thứ tự?",
           "choices": [
-            "I never walked now.",
+            "I went walking after the police arrived.",
             "I was walking when I saw the robber.",
-            "I will walk when I saw the robber.",
-            "I saw walking tomorrow."
+            "I will go walking tomorrow.",
+            "I saw the robber before I started walking."
           ],
           "answer": 1,
           "explanation": "Was walking là bối cảnh đang diễn ra, saw là sự kiện xen vào."
@@ -6080,9 +6080,9 @@
           "prompt": "Bạn cần mượn tiền. Câu nhờ nào lịch sự và đúng hướng cho mượn?",
           "choices": [
             "Could you lend me some money?",
-            "Could I lend you my money?",
-            "You are a money.",
-            "Money borrowed me."
+            "Could I lend you some money?",
+            "Could you tell me how much it costs?",
+            "Could you return the money you borrowed from me?"
           ],
           "answer": 0,
           "explanation": "Người cần nhận tiền nhờ người kia lend me, cho mình mượn."
@@ -6222,8 +6222,8 @@
           "prompt": "Bạn đang chọn bữa ăn lành mạnh. Lựa chọn nào phù hợp mục tiêu?",
           "choices": [
             "Eat only junk food every day.",
-            "Skip all food forever.",
-            "Buy food only for its color.",
+            "Choose food only by its color.",
+            "Avoid fruit and vegetables at every meal.",
             "Choose fruit and vegetables."
           ],
           "answer": 3,
@@ -6363,10 +6363,10 @@
           "kind": "scenario",
           "prompt": "Bạn lên đường bằng ô tô và chưa biết lộ trình. Bạn nên làm gì?",
           "choices": [
-            "Start without knowing the destination.",
-            "Read only the restaurant menu.",
+            "Read the dinner menu before choosing a road.",
+            "Ignore the route until after the trip.",
             "Check the map before the road trip.",
-            "Ignore every road sign."
+            "Choose a route without checking where it goes."
           ],
           "answer": 2,
           "explanation": "Map giúp xác định đường đi cho road trip."
@@ -6505,10 +6505,10 @@
           "kind": "scenario",
           "prompt": "Bạn muốn xin mượn kéo từ người bạn. Câu nào phù hợp?",
           "choices": [
-            "Scissors borrow me.",
+            "May I return the scissors I borrowed?",
             "May I borrow your scissors?",
-            "May I lend your scissors to you?",
-            "I am your scissors."
+            "May I lend you my scissors?",
+            "May I give you a new pair of scissors?"
           ],
           "answer": 1,
           "explanation": "Borrow là mượn từ người khác; May I là xin phép."
@@ -6648,9 +6648,9 @@
           "prompt": "Bạn đang sửa xe và muốn kể bối cảnh khi điện thoại reo. Câu nào đúng?",
           "choices": [
             "I was fixing the car when the phone rang.",
-            "I will fix yesterday when it rang.",
-            "The car was me.",
-            "I fix tomorrow when it rang."
+            "I fixed the car before you called.",
+            "I will fix the car tomorrow.",
+            "I usually fix cars on Sundays."
           ],
           "answer": 0,
           "explanation": "Was fixing diễn tả công việc đang làm trong quá khứ."
@@ -6789,9 +6789,9 @@
           "kind": "scenario",
           "prompt": "Bạn muốn biết người bạn đã từng tới bảo tàng này chưa. Bạn hỏi gì?",
           "choices": [
-            "Did you visit tomorrow?",
-            "Are you this museum?",
-            "Will you visited yesterday?",
+            "Will you visit this museum tomorrow?",
+            "When does this museum close?",
+            "Would you like to visit the museum with me?",
             "Have you ever visited this museum?"
           ],
           "answer": 3,
@@ -6931,10 +6931,10 @@
           "kind": "scenario",
           "prompt": "Bạn tới bảo tàng để tìm hiểu lịch sử. Câu nào nói mục đích?",
           "choices": [
-            "I learn because museum is me.",
-            "I visit to yesterday.",
+            "I learned about history before going to the museum.",
+            "I visit the museum because I work there.",
             "I visit the museum to learn about history.",
-            "I visit history under a museum."
+            "I visited the museum after I learned the history."
           ],
           "answer": 2,
           "explanation": "To learn diễn đạt mục đích của việc tới bảo tàng."
@@ -7073,10 +7073,10 @@
           "kind": "scenario",
           "prompt": "Bạn làm báo cáo và chưa hiểu yêu cầu của giáo viên. Bạn nên nói gì?",
           "choices": [
-            "Where is your car engine?",
+            "Could you tell me the class timetable?",
             "Could you explain the directions, please?",
-            "I understand everything; no questions.",
-            "Directions is my birthday."
+            "I have finished the report and understand the directions.",
+            "Could I hand in my report now?"
           ],
           "answer": 1,
           "explanation": "Xin giải thích directions giúp làm rõ chỉ dẫn trước khi làm bài."
@@ -7216,9 +7216,9 @@
           "prompt": "Bạn muốn xây thói quen học mỗi ngày. Kế hoạch nào phù hợp?",
           "choices": [
             "Practice a little every day.",
-            "Study once and never return.",
-            "Wait a year before practicing.",
-            "Give up after one mistake."
+            "Study once and never practice again.",
+            "Wait a year before doing any practice.",
+            "Stop practicing after your first mistake."
           ],
           "answer": 0,
           "explanation": "A little every day là luyện ít nhưng đều đặn."
@@ -7357,9 +7357,9 @@
           "kind": "scenario",
           "prompt": "Bạn thất bại một lần nhưng muốn tiếp tục mục tiêu. Câu nào phù hợp?",
           "choices": [
-            "I will never try again.",
-            "I succeeded before I began.",
-            "Failure is my birthday.",
+            "I tried last year and will never try again.",
+            "I am going to give up my goal now.",
+            "I have already decided not to practice anymore.",
             "I will try again and not give up."
           ],
           "answer": 3,
@@ -7431,7 +7431,7 @@
           "Dùng ít nhất ba từ/cụm từ của bài, chẳng hạn: chance, career, succeed.",
           "Dùng ít nhất một mẫu Quá khứ và tương lai; kiểm tra theo câu mẫu: Next year, I am going to learn a new skill."
         ],
-        "sample": "I want to take a chance in my career. Sometimes I fail, but I do not give up. Next year, I am going to learn a new skill.",
+        "sample": "Last month, I failed at a new task. I learned from that experience. I am proud of my progress in my career. Next year, I am going to take a chance and learn a new skill. I will not give up.",
         "commonError": "Tránh nhầm cấu trúc: Dùng quá khứ đơn để kể việc đã xong; be going to/will để nói kế hoạch hay dự đoán tiếp theo. Đối chiếu ý của bạn với mẫu, không cần chép y nguyên."
       }
     }

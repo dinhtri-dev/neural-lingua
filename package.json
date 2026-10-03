@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Static VOA learning companion; Node is used only for tests.",
-  "scripts": {"test": "node tests/browser.cjs"},
+  "scripts": {"test": "node tests/browser.cjs && node tests/multi-tab.cjs && node tests/translation-boundaries.cjs"},
   "devDependencies": {"playwright": "1.62.1"}
 }

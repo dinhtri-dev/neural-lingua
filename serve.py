@@ -7,6 +7,8 @@ import argparse
 ROOT = Path(__file__).resolve().parent
 CSP = "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://translate.googleapis.com; frame-src https://learningenglish.voanews.com; img-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'"
 class PreviewHandler(SimpleHTTPRequestHandler):
+    server_version = "Neural-Lingua-Preview"
+    sys_version = ""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
     def allowed(self):

@@ -1,0 +1,20 @@
+const {chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const base=process.env.PREVIEW_URL||'http://127.0.0.1:8831',results=[];const out=process.env.QA_OUT_DIR||path.resolve(__dirname,'../test-results');fs.mkdirSync(out,{recursive:true});
+const data=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/course.json'),'utf8'));
+const ready=async(p,route)=>{await p.goto(base+'/#'+route);await p.locator('main[aria-busy=false]').waitFor();};
+(async()=>{
+const browser=await chromium.launch({channel:'msedge',headless:true}),ctx=await browser.newContext(),p=await ctx.newPage();let requests=0;
+await p.route('https://translate.googleapis.com/**',r=>{requests++;const q=new URL(r.request().url()).searchParams.get('q');return r.fulfill({status:200,contentType:'application/json',body:JSON.stringify([[[q,'']],null,'vi'])});});
+await ready(p,'translate');
+const unicode='Xin chào 🌍!\n\nDòng hai: 日本語 và Français.';await p.locator('#textInput').fill(unicode);await p.locator('#translateButton').click();await p.waitForFunction(v=>document.querySelector('#translatedText').value===v,unicode);results.push('Unicode and multiple paragraphs preserved');
+await p.locator('#textInput').fill('漢'.repeat(5000));await p.locator('#translateButton').click();await p.waitForFunction(()=>document.querySelector('#translatedText').value.length===5000);const before=requests;
+await p.locator('#textInput').evaluate(n=>{n.value='x'.repeat(5001);n.dispatchEvent(new Event('input',{bubbles:true}));});await p.locator('#translateButton').click();assert.match(await p.locator('#translationStatus').innerText(),/1 đến 5.000/);assert.equal(requests,before);results.push('5000 Unicode code units accepted; 5001 rejected without request');
+await p.locator('#saveTranslationHistory').check();for(let i=0;i<21;i++){await p.locator('#textInput').fill('History '+i);await p.locator('#translateButton').click();await p.waitForFunction(v=>document.querySelector('#translatedText').value===v,'History '+i);}
+assert.equal(await p.locator('.history-entry').count(),20);const hist=await p.evaluate(()=>JSON.parse(localStorage.getItem('neural-lingua.translation-history.v1')));assert.equal(hist.length,20);assert.equal(hist[0].input,'History 20');assert.equal(hist.at(-1).input,'History 1');results.push('History capped at20 and drops oldest entry');
+await p.locator('#saveTranslationHistory').uncheck();await p.waitForFunction(()=>!document.querySelector('#saveTranslationHistory').disabled);assert.equal(await p.evaluate(()=>localStorage.getItem('neural-lingua.translation-history.v1')),null);
+await p.unroute('https://translate.googleapis.com/**');await p.route('https://translate.googleapis.com/**',r=>r.abort('internetdisconnected'));await p.locator('#textInput').fill('offline');await p.locator('#translateButton').click();await p.locator('#retryTranslation').waitFor();assert.match(await p.locator('#translationStatus').innerText(),/Kiểm tra mạng/);results.push('Offline translation offers clear failure and retry');
+const injected=JSON.parse(JSON.stringify(data)),payload='<img src=x onerror="window.courseXSS=1">';injected.lessons[0].title=payload;injected.lessons[0].practiceGuide.sample=payload;injected.lessons[0].quiz[0].choices[0]=payload;
+const malicious=await browser.newContext(),m=await malicious.newPage();await m.route('**/data/course.json',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify(injected)}));await ready(m,'lesson/1');await m.locator('#writingModel summary').click();assert((await m.locator('main').innerText()).includes(payload));assert.equal(await m.locator('img').count(),0);assert.equal(await m.evaluate(()=>window.courseXSS),undefined);results.push('HTML in lesson title/model/quiz rendered as text');
+await malicious.close();await ctx.close();await browser.close();fs.writeFileSync(path.join(out,'extended-results.json'),JSON.stringify({passed:results.length,results},null,2));console.log(JSON.stringify({passed:results.length,results}));
+})().catch(e=>{console.error(e.stack);process.exit(1);});
