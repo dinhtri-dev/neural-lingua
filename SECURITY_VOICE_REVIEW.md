@@ -1,6 +1,6 @@
 # Kiểm tra bảo mật — ghi âm trên thiết bị
 
-Phạm vi: chỉ push mã nguồn `archive/year2`, không thay `main` hoặc GitHub Pages. Bằng chứng áp dụng cho commit chứa báo cáo này và runtime fingerprint SHA-256 `0e4e99897d57ee083d7616bedb6dd7586017ecd282ea9bec1305921e3ce1605a`. Bộ assets được tải/kiểm tra theo `data/voice-assets-manifest.json`; binary không đưa vào Git.
+Phạm vi: chỉ push mã nguồn `archive/year2`, không thay `main` hoặc GitHub Pages. Bằng chứng áp dụng cho commit chứa báo cáo này và runtime fingerprint SHA-256 `af6a967716892b04118672935f91cb05bc7d99da9237910ea759bb71c2a472b2`. Bộ assets được tải/kiểm tra theo `data/voice-assets-manifest.json`; binary không đưa vào Git.
 
 STT | Mục kiểm tra | Trạng thái | Bằng chứng | Lỗi đã sửa hoặc việc còn thiếu
 ---|---|---|---|---

@@ -27,7 +27,7 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         if not self.allowed(): self.send_error(404, 'Not found'); return
         try:
             super().do_GET()
-        except (ConnectionResetError, BrokenPipeError):
+        except (ConnectionError, BrokenPipeError):
             # Cancelling model preparation can close a large download early.
             pass
     def do_HEAD(self):
