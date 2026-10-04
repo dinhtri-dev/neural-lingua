@@ -4,7 +4,7 @@ Web tự học cho người Việt mới bắt đầu, hướng tới A1–A2. G
 
 ## Chạy bản dùng thử
 
-Cần Python 3.12 trở lên; ứng dụng không có thư viện runtime cần cài.
+Cần Python 3.12 trở lên. Phần học/dịch không cần cài thư viện runtime; ghi âm trên thiết bị cần chuẩn bị bộ model riêng theo [VOICE_GUIDE.md](VOICE_GUIDE.md).
 
 ```powershell
 python serve.py
@@ -25,7 +25,7 @@ Có thể tìm bài không cần dấu tiếng Việt, lọc chặng/trạng th�
 
 Tiến độ, điểm và sổ từ lưu cục bộ khi bật lưu; có nút tắt và xóa. Các tab đồng bộ thay đổi bằng Web Locks/storage events; trình duyệt thiếu Web Locks có cảnh báo dùng một tab. Bản nháp luyện viết không được lưu hoặc gửi đi. Lịch sử dịch mặc định tắt, giới hạn 20 mục khi bật. Không có tài khoản hoặc đồng bộ thiết bị.
 
-Video chỉ kết nối nhà cung cấp sau thao tác mở. Văn bản dịch được gửi tới Google qua HTTPS khi bấm Dịch; tránh thông tin riêng tư. Nhận diện giọng nói có thể dùng dịch vụ của trình duyệt và chỉ bật sau thao tác ghi âm.
+Video chỉ kết nối nhà cung cấp sau thao tác mở. Văn bản dịch được gửi tới Google qua HTTPS khi bấm Dịch; tránh thông tin riêng tư. Ghi âm trong công cụ Dịch dùng Whisper chạy ngay trong trình duyệt; audio không gửi ra ngoài hoặc lưu. Bấm Chuẩn bị ghi âm để tải model khoảng 63 MiB rồi cấp quyền micro khi bấm Ghi âm. Xem [hướng dẫn và các giới hạn](VOICE_GUIDE.md).
 
 ## Nội dung và nguồn
 
@@ -38,6 +38,7 @@ Node 22+, Microsoft Edge, Python server đang chạy:
 ```powershell
 npm ci --ignore-scripts
 npm test
+node tests/voice.cjs
 node tests/live-media.cjs
 ```
 
@@ -55,6 +56,6 @@ Bản bàn giao qua 44 nhóm kiểm thử (31 chức năng, 8 nhiều tab/bàn p
 
 ## Giới hạn và xuất bản
 
-Dịch dùng endpoint Google thử nghiệm, có thể ngừng hoặc đổi. Chưa có cam kết chất lượng dịch. Giọng nói tùy browser/OS; kiểm thử giọng nói tự động dùng stub, không đánh giá phát âm hoặc micro thật. Trình phát/nguồn video ngoài có thể thay đổi. Server cục bộ không phải môi trường production.
+Dịch dùng endpoint Google thử nghiệm, có thể ngừng hoặc đổi. Chưa có cam kết chất lượng dịch. Nhận diện đã thử với model thật, audio mẫu qua micro giả lập trên Brave và Edge; Opera chưa thử trực tiếp. Model nhỏ có thể nhận sai, chưa kiểm tra giọng người dùng/độ chính xác tiếng Việt. Giọng đọc vẫn tùy browser/OS; không đánh giá phát âm. Trình phát/nguồn video ngoài có thể thay đổi. Server cục bộ không phải môi trường production.
 
 Bản mới nằm trên archive/year2. GitHub Pages tiếp tục dùng main; lần cập nhật này không triển khai website. Không force-push hoặc viết lại lịch sử. Xem SECURITY_REVIEW.md và REVIEW_ROUNDS.md để biết phạm vi kiểm tra và đánh giá độc lập.

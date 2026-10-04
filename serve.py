@@ -5,10 +5,11 @@ from urllib.parse import unquote, urlsplit
 import argparse
 
 ROOT = Path(__file__).resolve().parent
-CSP = "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://translate.googleapis.com; frame-src https://learningenglish.voanews.com; img-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'"
+CSP = "default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self'; connect-src 'self' https://translate.googleapis.com; frame-src https://learningenglish.voanews.com; img-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'"
 class PreviewHandler(SimpleHTTPRequestHandler):
     server_version = "Neural-Lingua-Preview"
     sys_version = ""
+    extensions_map = {**SimpleHTTPRequestHandler.extensions_map, '.js':'text/javascript', '.mjs':'text/javascript', '.wasm':'application/wasm'}
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
     def allowed(self):
@@ -19,10 +20,16 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         target = (ROOT / path).resolve()
         if not target.is_relative_to(ROOT) or any(part.startswith('.') for part in Path(path).parts):
             return False
-        return target.is_file() and (path in ['index.html','styles.css'] or path.startswith('js/') and path.endswith('.js') or path.startswith('data/') and path.endswith('.json'))
+        voice_vendor = path in ['voice-assets/vendor/transformers.min.js', 'voice-assets/vendor/ort-wasm-simd-threaded.jsep.mjs', 'voice-assets/vendor/ort-wasm-simd-threaded.jsep.wasm']
+        voice_model = path.startswith('voice-assets/models/Xenova/whisper-tiny/') and path.removeprefix('voice-assets/models/Xenova/whisper-tiny/') in ['config.json', 'generation_config.json', 'preprocessor_config.json', 'tokenizer.json', 'tokenizer_config.json', 'onnx/encoder_model_quantized.onnx', 'onnx/decoder_model_merged_quantized.onnx']
+        return target.is_file() and (path in ['index.html','styles.css'] or path.startswith('js/') and path.endswith('.js') or path.startswith('data/') and path.endswith('.json') or voice_vendor or voice_model)
     def do_GET(self):
         if not self.allowed(): self.send_error(404, 'Not found'); return
-        super().do_GET()
+        try:
+            super().do_GET()
+        except (ConnectionResetError, BrokenPipeError):
+            # Cancelling model preparation can close a large download early.
+            pass
     def do_HEAD(self):
         if not self.allowed(): self.send_error(404, 'Not found'); return
         super().do_HEAD()
@@ -33,6 +40,7 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         self.send_header('X-Content-Type-Options','nosniff')
         self.send_header('Referrer-Policy','strict-origin-when-cross-origin')
         self.send_header('X-Frame-Options','DENY')
+        self.send_header('Permissions-Policy','microphone=(self), camera=(), geolocation=()')
         self.send_header('Cache-Control','no-store')
         super().end_headers()
 
