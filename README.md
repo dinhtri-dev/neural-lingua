@@ -23,7 +23,7 @@ Có thể tìm bài không cần dấu tiếng Việt, lọc chặng/trạng th�
 
 ## Quyền riêng tư
 
-Tiến độ, điểm và sổ từ lưu cục bộ khi bật lưu; có nút tắt và xóa. Bản nháp luyện viết không được lưu hoặc gửi đi. Lịch sử dịch mặc định tắt, giới hạn 20 mục khi bật. Không có tài khoản hoặc đồng bộ thiết bị.
+Tiến độ, điểm và sổ từ lưu cục bộ khi bật lưu; có nút tắt và xóa. Các tab đồng bộ thay đổi bằng Web Locks/storage events; trình duyệt thiếu Web Locks có cảnh báo dùng một tab. Bản nháp luyện viết không được lưu hoặc gửi đi. Lịch sử dịch mặc định tắt, giới hạn 20 mục khi bật. Không có tài khoản hoặc đồng bộ thiết bị.
 
 Video chỉ kết nối nhà cung cấp sau thao tác mở. Văn bản dịch được gửi tới Google qua HTTPS khi bấm Dịch; tránh thông tin riêng tư. Nhận diện giọng nói có thể dùng dịch vụ của trình duyệt và chỉ bật sau thao tác ghi âm.
 
@@ -42,6 +42,8 @@ node tests/live-media.cjs
 ```
 
 Playwright 1.62.1 chỉ là dependency phát triển. Bộ chức năng dùng dịch/giọng nói và video giả để kiểm soát lỗi, còn live-media.cjs bấm trình phát thật ở bài 1/13/26/39/52, kiểm tra thời gian phát tiến lên và hình đã giải mã. Screenshot/kết quả nằm trong test-results và không được commit. Browser test có thể dùng PLAYWRIGHT_PATH để chọn bộ Playwright đã cài, PREVIEW_URL để chọn cổng, QA_OUT_DIR để đổi thư mục kết quả.
+
+Bản bàn giao qua 44 nhóm kiểm thử (31 chức năng, 8 nhiều tab/bàn phím, 5 giới hạn dịch/HTML). Kiểm tra nguồn gồm 52 video chính và 104 video bổ sung qua HTTP; phát thật 5 bài trên với thời gian tiến lên và hình giải mã, không dùng HTTP 200 làm bằng chứng phát. Reviewer độc lập chấm lần lượt 7,8 → 7,9 → 8,9/10; dừng cải tiến ở lượt ba. Sáu đề xuất còn lại được ghi trong REVIEW_ROUNDS.md, chưa được triển khai hoặc tính như đã đạt.
 
 ## Cấu trúc
 

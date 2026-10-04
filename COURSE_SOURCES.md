@@ -61,4 +61,4 @@ Hướng dẫn, ví dụ và bài tập tiếng Việt do Neural-Lingua biên so
 | 51 | A Good Habit | [VOA](https://learningenglish.voanews.com/a/lets-learn-english-lesson-51-a-good-habit/3773577.html) | 3 |
 | 52 | Taking Chances | [VOA](https://learningenglish.voanews.com/a/lets-learn-english-lesson-52-taking-chances/3805454.html) | 3 |
 
-52 nguồn bài và trình phát chính đã được kiểm tra; MP4/HLS trả HTTP 200. Thử phát thực tế bài 1/13/26/39/52 đã giải mã hình, thời gian chạy >3 giây. Chưa xem toàn bộ 52 video từ đầu tới cuối hoặc đánh giá âm thanh. Bằng chứng URL, loại media, hash tài liệu chính sách nằm trong data/source-audit.json.
+52 nguồn bài và trình phát chính cùng 104 trình phát bổ sung đã được kiểm tra; media MP4/HLS trả HTTP 200. Thử phát thực tế video chính bài 1/13/26/39/52 đã giải mã hình, thời gian chạy >3 giây. Chưa xem toàn bộ 156 video từ đầu tới cuối hoặc đánh giá âm thanh; video bổ sung chỉ có bằng chứng HTTP, chưa chứng nhận phát thật. Bằng chứng URL, loại media, thời điểm kiểm tra riêng và hash tài liệu chính sách nằm trong data/source-audit.json.
