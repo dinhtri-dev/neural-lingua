@@ -1,0 +1,18 @@
+{
+  "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "lengths": {
+    "train": {
+      "max": 298,
+      "count": 416
+    },
+    "validation": {
+      "max": 249,
+      "count": 52
+    },
+    "test": {
+      "max": 267,
+      "count": 52
+    }
+  },
+  "over_limit": []
+}

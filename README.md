@@ -1,5 +1,11 @@
 # Neural-Lingua — Học tiếng Anh từng bước
 
+## Gia sư AI local và bộ huấn luyện
+
+Mở `ai-tutor/neural-lingua-ai.code-workspace` bằng VS Code. Bộ đi kèm có 520 mẫu, QLoRA Qwen3-1.7B, kiểm tra GPU và lưu adapter tự động. Xem [hướng dẫn AI](ai-tutor/README.md). Gia sư/ASR dùng backend local riêng. Máy hiện tại có lượt train đầy đủ `20261004-101138-train-254410` và 156 phản hồi so sánh; bảng chấm chưa được điền nên adapter vẫn là thử nghiệm. Chọn **Thử gia sư (thử nghiệm, chưa nghiệm thu)** rồi F5 để dùng.
+
+Gia sư có gợi ý hỏi từ trong bài, giải thích mẫu câu, luyện hội thoại và nhận xét bản nháp. Gợi ý chỉ điền ô hỏi; bạn có thể sửa trước khi gửi. Câu đang viết được giữ cho đến khi bạn chủ động thay bằng gợi ý/transcript. Hội thoại dài tự bỏ các cặp hỏi–đáp cũ để vừa giới hạn model, giữ nguyên tài liệu bài và câu hỏi mới nhất, đồng thời thông báo số lượt còn dùng. Xem [kết quả phát triển ngày 08/10/2026](ai-tutor/TUTOR_DEVELOPMENT_2026-10-08.md).
+
 Web tự học cho người Việt mới bắt đầu, hướng tới A1–A2. Gồm 52 bài theo thứ tự VOA Let’s Learn English Level 1, hướng dẫn tiếng Việt, 312 mục từ vựng, 260 câu hỏi tự luyện, flashcard và công cụ dịch/giọng nói.
 
 ## Chạy bản dùng thử

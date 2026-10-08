@@ -1,0 +1,399 @@
+{
+  "generated_at": "2026-10-08T16:47:00.311878+07:00",
+  "action": "commit and push source to archive/year2; no production deployment",
+  "base_commit": "17e9d89904b534e658afe366a6d8572053f96b64",
+  "branch": "archive/year2",
+  "source_git_blobs": [
+    {
+      "path": ".gitattributes",
+      "blob": "a67e736adb6b5a12a87093ecc1e0c26ec8339ea6"
+    },
+    {
+      "path": ".gitignore",
+      "blob": "34e0b4b7cb42f3e090ae0e4f9b2e8f363a07c13f"
+    },
+    {
+      "path": "ARCHIVE_STATUS.md",
+      "blob": "491a0027e2c3b95e467e7d76396bdc4cd3f2db9c"
+    },
+    {
+      "path": "COURSE_SOURCES.md",
+      "blob": "d8ca43967baeebc7eae30bf86e739e4dd798c51a"
+    },
+    {
+      "path": "IMPLEMENTATION_PLAN.md",
+      "blob": "d0c444511bcb64b65bfefb32fd7a7bfe73e3b658"
+    },
+    {
+      "path": "README.md",
+      "blob": "dcd4ab5948b71f42da4fcccf01dfdf78b1e77914"
+    },
+    {
+      "path": "REVIEW_ROUNDS.md",
+      "blob": "d747ec301fdf16e4662e9e393234bcb4fc0a9c01"
+    },
+    {
+      "path": "SECURITY_REVIEW.md",
+      "blob": "d80679d076846d611171d620a93bd513414ab501"
+    },
+    {
+      "path": "SECURITY_VOICE_REVIEW.md",
+      "blob": "baf46619abd35c38ee3d8533b726288f11e41b82"
+    },
+    {
+      "path": "VOICE_GUIDE.md",
+      "blob": "3b7ce4656c155a8db165bb71a324c617cfeb51c6"
+    },
+    {
+      "path": "ai-tutor/.gitignore",
+      "blob": "1f9d851e4be5d7831a53721e3bcb120b55277e1d"
+    },
+    {
+      "path": "ai-tutor/IMPLEMENTATION_PLAN.md",
+      "blob": "dde1b37329514d7c717f6907316c6986122145c1"
+    },
+    {
+      "path": "ai-tutor/PRONUNCIATION_PILOT.md",
+      "blob": "39e95fca4c41b16a59f822ccbc9dc92e7fe8ea99"
+    },
+    {
+      "path": "ai-tutor/README.md",
+      "blob": "7e68138f7ccf73276da70c718e7ef29b2c0dfdc6"
+    },
+    {
+      "path": "ai-tutor/TUTOR_CONNECTION_FIX.md",
+      "blob": "67c9c2c1bed995269addfa205b0229fc3471af74"
+    },
+    {
+      "path": "ai-tutor/TUTOR_DEVELOPMENT_2026-10-08.md",
+      "blob": "021ef13f8447cb9f106cd2176fc1dd3c5aaf9570"
+    },
+    {
+      "path": "ai-tutor/VERIFICATION.json",
+      "blob": "7402a1541bd2ed71ba3c2dcdc1c41fa1e31b4bf0"
+    },
+    {
+      "path": "ai-tutor/VERIFICATION.md",
+      "blob": "1eedf0b6e0ed6e8e2bd5f7cea4e808ae1a120700"
+    },
+    {
+      "path": "ai-tutor/VRAM_FIX_VERIFICATION.json",
+      "blob": "09bae6dd21e73b8ed81e42c19d5905e0d88a573a"
+    },
+    {
+      "path": "ai-tutor/VRAM_FIX_VERIFICATION.md",
+      "blob": "d44960b964142a0fabd421c3b069b4cee8625604"
+    },
+    {
+      "path": "ai-tutor/approve_review.py",
+      "blob": "0761ceb2761fe2000e59e642cce2c6f846add8c5"
+    },
+    {
+      "path": "ai-tutor/common.py",
+      "blob": "366b17d144a99d2821dfe69bb39b87595003edc5"
+    },
+    {
+      "path": "ai-tutor/config.json",
+      "blob": "745b7f8234fd0146d5f32e10f69c95f2499d339d"
+    },
+    {
+      "path": "ai-tutor/data/course.snapshot.json",
+      "blob": "0154fe8298763fb82b915a844529c52c43b2cfd9"
+    },
+    {
+      "path": "ai-tutor/data/manifest.json",
+      "blob": "c26f298f480d81c2cab21934d44a352087d184d1"
+    },
+    {
+      "path": "ai-tutor/data/test.jsonl",
+      "blob": "479117875781656b368f362d3be314491faa3e03"
+    },
+    {
+      "path": "ai-tutor/data/token-audit.json",
+      "blob": "9372b0b5716feef6357418533dcaf6c1da1376dd"
+    },
+    {
+      "path": "ai-tutor/data/train.jsonl",
+      "blob": "d9551edbea4bf49bd896fa477c2c8afcb69f195c"
+    },
+    {
+      "path": "ai-tutor/data/validation.jsonl",
+      "blob": "e26fc279e0ab955c2ccdb00b4ec0aaafde186861"
+    },
+    {
+      "path": "ai-tutor/neural-lingua-ai.code-workspace",
+      "blob": "7ec329c1b8be0df3660b13e9fc367368eb6dd6a8"
+    },
+    {
+      "path": "ai-tutor/pipeline.py",
+      "blob": "572890ec29f75825c1065efe83121fae44a96378"
+    },
+    {
+      "path": "ai-tutor/prepare_data.py",
+      "blob": "6876935ebbd94d52e6350cac9c5dabc42a159abc"
+    },
+    {
+      "path": "ai-tutor/requirements-server.txt",
+      "blob": "6a89cb2b861c3fe021f583fd00973fb64ae3e9f6"
+    },
+    {
+      "path": "ai-tutor/requirements-train.txt",
+      "blob": "7a79b610965e34fe4014c8b5dd3c4d5d493da77a"
+    },
+    {
+      "path": "ai-tutor/requirements.lock.txt",
+      "blob": "4bba8461e7ea5dadd37b3c1ef79ae485f2e69567"
+    },
+    {
+      "path": "ai-tutor/run.py",
+      "blob": "26fd687f5d1aa7279535da118195e26803984de4"
+    },
+    {
+      "path": "ai-tutor/server.py",
+      "blob": "990bd903edd771a9de7ace028734d1b2f1f4f719"
+    },
+    {
+      "path": "ai-tutor/test_pipeline_lifecycle.py",
+      "blob": "72fd366eb70acac6f688f7b752082c8a6e88ce26"
+    },
+    {
+      "path": "ai-tutor/test_tutor.py",
+      "blob": "bfc5773b668c6fcf83650a0ad068a4f4479bafce"
+    },
+    {
+      "path": "ai-tutor/verify_training.py",
+      "blob": "138c74c13706476653fb6dda78cf73062c55209e"
+    },
+    {
+      "path": "ai-tutor/verify_vram_lifecycle.py",
+      "blob": "94234bbcc92ef51fe07be3bb5ecf6a9c9824315a"
+    },
+    {
+      "path": "data/course.json",
+      "blob": "f5b8352c1195defaaaa5be8f054f0d78066ca2bc"
+    },
+    {
+      "path": "data/source-audit.json",
+      "blob": "4a1afe82bbc4623435a2dc4190c7c6de33e42edc"
+    },
+    {
+      "path": "data/voice-assets-manifest.json",
+      "blob": "842abbb66f631a2154c067c54c4e3016d4894c44"
+    },
+    {
+      "path": "index.html",
+      "blob": "5c64a65241a5c46f3b81f8e22f02094a43c81088"
+    },
+    {
+      "path": "js/app.js",
+      "blob": "155b20fcb8d53bd7fcbed5cd5cf15a15ee79144c"
+    },
+    {
+      "path": "js/course.js",
+      "blob": "e425aa736fc1e1bdb406c018289210bb8cb56050"
+    },
+    {
+      "path": "js/dom.js",
+      "blob": "ae41d91e168c1d518bebf0f2862ee6d81c053e0f"
+    },
+    {
+      "path": "js/store.js",
+      "blob": "144e8893640348a408b41722e25227f6e5b3ff60"
+    },
+    {
+      "path": "js/translator.js",
+      "blob": "c6707c3b33847dd522fb383ee7e7dd71ee57c05d"
+    },
+    {
+      "path": "js/tutor.js",
+      "blob": "976f251c84f4f86c14e63fb67013eca18b1c0415"
+    },
+    {
+      "path": "js/voice-worker.js",
+      "blob": "42ac59b24b6518c2fd153dfdeb9140da2c942aab"
+    },
+    {
+      "path": "js/voice.js",
+      "blob": "55b9dac9aa9c402c193a3c5be5c2db9165788f18"
+    },
+    {
+      "path": "old",
+      "blob": "6dc6a61e828bfb27129500c7ed257c3f348bf142"
+    },
+    {
+      "path": "package-lock.json",
+      "blob": "0eac2eb7da14e6aed9d048b336b40b991b543301"
+    },
+    {
+      "path": "package.json",
+      "blob": "3e692f2e8bccb79a63b08e8800275b7e1e7cb20e"
+    },
+    {
+      "path": "serve.py",
+      "blob": "98c851167b2e2d62aab2fc537429bfc092508581"
+    },
+    {
+      "path": "styles.css",
+      "blob": "5aa15b98ab2e187f33b2cbed7c4d9f4fc8f1a08a"
+    },
+    {
+      "path": "tests/browser.cjs",
+      "blob": "d3baba24423f837bbc3a473a031897b895a14f9b"
+    },
+    {
+      "path": "tests/live-media.cjs",
+      "blob": "40f7543cfd62985ca97c70758291d295a4803fb4"
+    },
+    {
+      "path": "tests/multi-tab.cjs",
+      "blob": "f9bc69ba607118abb726dc07f752edd9f66d2b91"
+    },
+    {
+      "path": "tests/translation-boundaries.cjs",
+      "blob": "8004b77cd01af951817e5c0413eee82ca1f0b395"
+    },
+    {
+      "path": "tests/tutor-flow.cjs",
+      "blob": "fd3e51b96e69f8995f50e99809f9393ecbd486a5"
+    },
+    {
+      "path": "tests/tutor-live.cjs",
+      "blob": "ab2660dd2b89b73d29f5ca42a78235dfc0fd14f7"
+    },
+    {
+      "path": "tests/tutor.cjs",
+      "blob": "fdb01d96f7b3326bc7e73800cfa87cbdf3266562"
+    },
+    {
+      "path": "tests/voice.cjs",
+      "blob": "b76daa238be9f70e6ba359ca51070220c56185a9"
+    },
+    {
+      "path": "tools/prepare_voice.py",
+      "blob": "84b9e39b516b124e7341e33e13ba8dc5a94a5ba2"
+    }
+  ],
+  "results": {
+    "python_tests": 24,
+    "web_pass_groups": 73,
+    "real_tutor_cases": 6,
+    "static_http_cases": 7,
+    "tutor_http_cases": 18,
+    "python_packages_audited": 75,
+    "python_findings": 0,
+    "python_skipped_packages": 0,
+    "npm_findings": 0,
+    "secret_findings": {
+      "files": 0,
+      "staged": 0,
+      "history": 0
+    },
+    "gpu_smoke_steps": 10,
+    "resume_steps": [
+      1,
+      2
+    ],
+    "profile_gradient_accumulation": 16,
+    "validation_cases_each_profile": 52,
+    "fresh_checkout_dataset_counts": {
+      "train": 416,
+      "validation": 52,
+      "test": 52
+    },
+    "ui_reviewed_widths": [
+      375,
+      1440
+    ]
+  },
+  "runtime": {
+    "model_id": "Qwen/Qwen3-1.7B",
+    "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "adapter": "20261004-101138-train-254410",
+    "status": "experimental",
+    "torch": "2.14.1+cu130",
+    "driver": "610.78",
+    "python": "3.12.6",
+    "gpu": "RTX 4050 6GB"
+  },
+  "advisory_lookup": {
+    "source_lock": "requirements.lock.txt",
+    "normalization": "Only torch 2.14.1+cu130 -> 2.14.1 for advisory database lookup; CUDA package was not skipped."
+  },
+  "local_evidence_sha256": [
+    {
+      "path": "test-results/pre-push-web-tests-final.log",
+      "sha256": "4065277ae5983138827a1f7af36820446730ff3c6e54f36e791b627d0b1365d1"
+    },
+    {
+      "path": "test-results/pre-push-python-tests-final.log",
+      "sha256": "c08a0f295384b6a9024bc2743d6fa9841e9ca52bbef5845aebad80aba9f7a7af"
+    },
+    {
+      "path": "test-results/pre-push-pip-check-final.log",
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "path": "test-results/pre-push-bootstrap-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-results/pre-push-python-audit-release.json",
+      "sha256": "9b45e36e87408c738809a982b6ce6d958d2f4077dfc094552f4eaf198b73ffc5"
+    },
+    {
+      "path": "test-results/pre-push-npm-audit.json",
+      "sha256": "31072f085b23699367192aa012f4f7c2e3008b6560fdf75d50371530d997adce"
+    },
+    {
+      "path": "test-results/pre-push-gpu-smoke-final.log",
+      "sha256": "7535dbdac1bcc7074291821824d9e4dbc4b007002f6e7c350ba64f2db299e2e7"
+    },
+    {
+      "path": "test-results/pre-push-gpu-profile-final.log",
+      "sha256": "0b84843f2d7197f7640a288c83135b01bd78fd1e71c09f6b9dba2dcf34050374"
+    },
+    {
+      "path": "test-results/pre-push-live-final/tutor-live-results.json",
+      "sha256": "70d3b32d752ee534345443dbb9249211ecbc5bb5544d216bfee96f5b764d7d4c"
+    },
+    {
+      "path": "test-results/pre-push-static-http.json",
+      "sha256": "3bf1385c0e7766fecfc199179c3658d7810965014636f7e55971651052c9f741"
+    },
+    {
+      "path": "test-results/pre-push-tutor-http-get.json",
+      "sha256": "566c74be72d0fa21b3b5841151abc8ff5b4fed0531963129584eed46397ab956"
+    },
+    {
+      "path": "test-results/pre-push-tutor-http-post.json",
+      "sha256": "8c9da39eddcc8be5726e1f13db8a230ed7f99cbeed31206744104479e51a6049"
+    },
+    {
+      "path": "test-results/pre-push-remote-settings-final.json",
+      "sha256": "aca072f7bf2a54f2bb023f0b476574a088ea5e2f6b718fd3e34c3b5af57f6b4e"
+    },
+    {
+      "path": "test-results/pre-push-secrets-files-final.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "test-results/pre-push-secrets-staged-final.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "test-results/pre-push-secrets-history-final.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "test-results/pre-push-fresh-final.json",
+      "sha256": "992e57ddb03f2e5d3297e68a3dccbcbbbbf2cc36af85d446e6b3f4a03baa7534"
+    }
+  ],
+  "limits": [
+    "Source archive push only; no public AI backend deployment assessed.",
+    "Dependency advisories for pinned package versions, not an exhaustive audit of every bundled native binary.",
+    "Physical microphone and human tutor quality approval not verified.",
+    "GPU compatibility checked on this Windows/Python/driver/GPU combination."
+  ],
+  "conclusion": "DU DIEU KIEN: archive/year2 source push only"
+}

@@ -1,0 +1,26 @@
+{
+  "smoke_run": "20261004-100856-smoke-a78e90",
+  "before": {
+    "total_mib": 6141,
+    "used_mib": 414,
+    "free_mib": 5507
+  },
+  "after_smoke": {
+    "total_mib": 6141,
+    "used_mib": 399,
+    "free_mib": 5522
+  },
+  "after_next_stage_preflight": {
+    "total_mib": 6141,
+    "used_mib": 399,
+    "free_mib": 5522
+  },
+  "next_stage_preflight_passed": true,
+  "full_training_started": false,
+  "source_sha256": {
+    "pipeline.py": "c115a94bde56eaebca528dd54c8a2695b8de24850b9db67b901ac24f063c945a",
+    "neural-lingua-ai.code-workspace": "b8e2ecd289b5e4a280e371843b74f9656b6e412825cee52f06fc2c9792884ff8",
+    "test_pipeline_lifecycle.py": "23dc6f70ce75d783fcbf4ef7d85be27e0b4e85e109d173e6eeb825211d3902a6",
+    "verify_vram_lifecycle.py": "2a5e1ed358be369a0802c334bc2281618161131891dbabbe766334a1a3384cd5"
+  }
+}

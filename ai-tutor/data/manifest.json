@@ -1,0 +1,15 @@
+{
+  "course_sha256": "8576a0fc6490128c8e56e625bfcb4ff1037be796d3d690f5628ff2844f6a6940",
+  "files": {
+    "train.jsonl": "da38abdd46e813f56178ab264da0cc54113d24afdadcbc01646f333189274c78",
+    "validation.jsonl": "ffcbac4f07af437ffec0134b68850b8abbc1e18b6f2f03eaf7ce37e456fb2150",
+    "test.jsonl": "d122412e9cecb0930141dcf3d7fb2375dabbb6b53930ebf4083f9783db3de49c"
+  },
+  "counts": {
+    "train": 416,
+    "validation": 52,
+    "test": 52
+  },
+  "review": "Starter corpus grounded in existing lessons. Editorial and programmatic checks; independent teacher review pending.",
+  "rights": "Existing Neural-Lingua authored text plus original transfer exercises; VOA attribution retained. No downloaded video or learner recordings."
+}

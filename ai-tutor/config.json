@@ -1,0 +1,16 @@
+{
+  "model_id": "Qwen/Qwen3-1.7B",
+  "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "max_length": 512,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 16,
+  "epochs": 3,
+  "learning_rate": 0.0001,
+  "seed": 42,
+  "max_new_tokens": 192,
+  "inference_max_input_tokens": 1536,
+  "port": 8832
+}

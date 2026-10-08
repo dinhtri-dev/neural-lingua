@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-04",
+  "timezone": "Asia/Saigon",
+  "dataset_fingerprint": "45420e4ef82590e71e861436d65f9bac251219b833b6f6f2447d297ea34e6222",
+  "source_sha256": {
+    "config.json": "dc75b0b9d9c2224249e42f2ca922f43beabe6037a62c1e2441b39e932d6942a2",
+    "run.py": "7932c227b3547444232d4ae229e630e633e2ddc3a0db6e04d8472b96763f1940",
+    "common.py": "557e87ad862c3dfacec9bbfa71431cff8688436be353b0aaae6d22afa99ee53c",
+    "pipeline.py": "379155235c14680a712d1f733827cc86af6ad5523bcf759b98912035df0ec630",
+    "server.py": "97aad0c27beb291cff1b617ef01e7bbfebb20ef55dddb546a7e700c179266816",
+    "approve_review.py": "63b8d08ce0c40027703fc2e132dbf09dfdb3ec3767ec919ee079186304a04534",
+    "prepare_data.py": "6f698263ac600ac1e021138baa42381780fc22c1a5fe7113685444a6eaa5eb51",
+    "requirements.lock.txt": "c44c2ba3146bf24169e00b2454a7267fcc3829b753280f59d771f7f7569adc95"
+  },
+  "counts": {
+    "train": 416,
+    "validation": 52,
+    "test": 52
+  },
+  "gpu_smoke_run": "20261004-093419-smoke-f18842",
+  "smoke": {
+    "global_step": 10,
+    "training_loss": 3.691899245977402,
+    "adapter_changed": true,
+    "peak_vram_gb": 3.071,
+    "elapsed_seconds": 9.08
+  },
+  "full_profile_and_resume_run": "20261004-093835-profile-check-45d45a",
+  "python_tests": 11,
+  "web_regression_groups": 44,
+  "tutor_browser_tests": "context, history, reset, XSS, stale cancellation, recording/STT transcript confirmation/TTS mock, privacy, mobile",
+  "asr_real": "small.en CPU INT8, bounded decoder, Windows synthetic speech",
+  "quality_status": "experimental; full three-epoch training and human 52-case review not performed",
+  "limits": [
+    "No independent teacher review of the starter corpus",
+    "Held-out test currently focuses on sentence correction",
+    "Microphone capture and physical browser audio output were simulated, not verified with a real learner",
+    "Pronunciation pilot has not run",
+    "No push, deploy, account changes or paid API usage"
+  ]
+}

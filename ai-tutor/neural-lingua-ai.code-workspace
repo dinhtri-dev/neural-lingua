@@ -1,0 +1,113 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "Train gia sư Neural-Lingua"
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "python",
+    "python.terminal.activateEnvironment": false
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Train gia sư",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "train"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      },
+      {
+        "name": "Kiểm tra nhanh (10 bước GPU)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "smoke"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      },
+      {
+        "name": "Tiếp tục train",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "resume"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      },
+      {
+        "name": "Thử gia sư (local)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "serve"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      },
+      {
+        "name": "Thử gia sư (thử nghiệm, chưa nghiệm thu)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "serve",
+          "--experimental"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      },
+      {
+        "name": "Đánh giá model",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "evaluate"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      },
+      {
+        "name": "Thử gia sư đã train (3 epoch, thử nghiệm)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/run.py",
+        "python": "python",
+        "args": [
+          "serve",
+          "--experimental",
+          "--run-dir",
+          "${workspaceFolder}/runs/20261004-101138-train-254410"
+        ],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "subProcess": false
+      }
+    ]
+  }
+}

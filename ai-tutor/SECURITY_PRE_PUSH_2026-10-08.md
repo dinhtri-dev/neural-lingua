@@ -1,0 +1,48 @@
+# Kiểm tra bảo mật trước push Neural-Lingua — 08/10/2026
+
+Hành động được người dùng cho phép: tạo commit và push mã nguồn lên `dinhtri-dev/neural-lingua`, nhánh `archive/year2`. Báo cáo áp dụng cho mã có Git blob trong [PRE_PUSH_EVIDENCE_2026-10-08.json](PRE_PUSH_EVIDENCE_2026-10-08.json), cùng chính báo cáo/bằng chứng được thêm vào commit này. Các blob đã được đối chiếu giữa mã chạy kiểm thử và index trước commit.
+
+Đã đọc cấu hình GitHub bằng API có xác thực: Pages lấy nguồn từ `main`, HTTPS enforced; chỉ có workflow Pages động, không có webhook đang hoạt động hoặc workflow tùy chỉnh. Không tìm thấy cấu hình triển khai từ `archive/year2`. `main` tại lúc kiểm tra là `d8e79ecd0434dc736852758001fd6a83d9d4b098`; nhánh archive trước push là `17e9d89904b534e658afe366a6d8572053f96b64`.
+
+Gia sư được kiểm tra trên máy Windows, bind `127.0.0.1:8832`, một worker. Đây là cấu hình học/thử nghiệm cho một người dùng trên máy. Push này không phát hành backend AI public và không chứng nhận môi trường production của backend.
+
+| STT | Mục kiểm tra | Trạng thái | Bằng chứng | Lỗi đã sửa hoặc việc còn thiếu |
+|---|---|---|---|---|
+| 1 | Bảo vệ API key và bí mật | ĐẠT | Gitleaks quét toàn bộ nguồn trong index và phần staged, 0 phát hiện; rà soát JS/API/config không có secret đưa tới browser. | Cache/model/runtime riêng được ignore; bản quét mới bao gồm tài liệu và bằng chứng trước commit. |
+| 2 | Kiểm tra biến môi trường | ĐẠT | [run.py](run.py), [pipeline.py](pipeline.py), [config.json](config.json): cổng/model/revision rõ ràng; HF_HOME/telemetry ở tiến trình Python; không có biến secret xuất sang JS hay .env được theo dõi. | Bootstrap và lock đã đồng bộ bộ thư viện mới; cấu hình server vẫn là loopback local. Production/staging backend không nằm trong hành động này. |
+| 3 | Kiểm tra bí mật trong Git | ĐẠT | Gitleaks nguồn, staged và lịch sử tất cả refs với `--all`: mỗi lượt 0 phát hiện; kiểm tra root/ai-tutor .gitignore và danh sách file theo dõi. | Không có .venv, cache, runs, model weights, ghi âm hay log kiểm thử trong index; không sửa lịch sử. |
+| 4 | Bảo vệ trang và API quản trị | KHÔNG ÁP DỤNG | [server.py](server.py) chỉ có health, chat, ASR và static allowlist; thao tác train/approve chạy CLI local dưới tài khoản hệ điều hành. | Không có API/trang quản trị hoặc thao tác quản trị qua HTTP cần phân quyền. |
+| 5 | Kiểm tra xác thực | KHÔNG ÁP DỤNG | Không có tài khoản, đăng nhập, mật khẩu hoặc phiên đăng nhập trong ứng dụng local này. | Không thêm đăng nhập chỉ để đánh dấu checklist. Không dùng cấu hình này làm backend public. |
+| 6 | Kiểm tra quyền người dùng | KHÔNG ÁP DỤNG | Không có dữ liệu người dùng trên server hoặc ID chủ sở hữu; hội thoại giữ trong phiên browser. ID bài/từ được kiểm tra phía server. | Không có mô hình nhiều người dùng hay tài nguyên riêng theo user để kiểm tra truy cập chéo. |
+| 7 | Kiểm tra dữ liệu đầu vào | ĐẠT | [test_tutor.py](test_tutor.py): question/history/role/extra field/lesson/focus word, giới hạn token và body; HTTP thật xác nhận 422/413 cho đầu vào sai. | Thêm kiểm tra đường dẫn Windows trước khi resolve ở cả [server.py](server.py) và [serve.py](../serve.py), ngăn đường dẫn UNC/backslash đi tới filesystem. |
+| 8 | Chống XSS | ĐẠT | JS dùng createTextNode/textContent/textarea.value; bộ browser/tutor có payload XSS và qua. Giao diện model thật hiển thị bằng text, không có script error. | Không dùng HTML trực tiếp để hiển thị prompt, transcript hay câu trả lời. |
+| 9 | Chống SQL injection | KHÔNG ÁP DỤNG | Rà soát nguồn API/web và thư viện cấu hình: ứng dụng không dùng SQL hoặc truy vấn cơ sở dữ liệu. | Không có query, bộ lọc SQL hay tham số sắp xếp SQL để khai thác. |
+| 10 | Quyền và quy tắc cơ sở dữ liệu | KHÔNG ÁP DỤNG | Không có dịch vụ database/tài khoản DB/RLS; kho bài là JSON, tiến độ học ở browser, hội thoại không lưu trên server. | Không có quyền DB hoặc dữ liệu private trên DB cần cấp lại quyền. |
+| 11 | Giới hạn tần suất yêu cầu | ĐẠT | API tests xác minh chat 12/phút, ASR 6/phút, cửa sổ hết hạn, 429/Retry-After và giữ security headers; semaphore/lock chỉ cho một tác vụ model. | Thêm hạn mức toàn ứng dụng trước khi đọc body/upload, áp dụng đúng một server loopback/một worker. Nếu mở nhiều instance phải thiết kế lại hạn mức. |
+| 12 | Giới hạn chi phí | KHÔNG ÁP DỤNG | LLM/ASR chạy máy; không cấu hình API inference có phí hoặc tài khoản billing. Train có `report_to='none'`, `push_to_hub=False`; push archive không chạy dịch vụ GPU cloud. | Không có chi tiêu dịch vụ trả phí trong cấu hình được push để đặt quota/budget. |
+| 13 | Bảo vệ upload file | ĐẠT | Upload không dùng tên file để ghi; đọc tối đa 10 MB, decode nội dung thật bằng PyAV, giới hạn mẫu âm thanh tương đương 30 giây, đóng UploadFile trong finally. | Unit tests và HTTP thật từ chối file giả WAV, hơn 10 MB và WAV thật 31 giây; không lưu hoặc thực thi file upload. |
+| 14 | Chống CSRF | KHÔNG ÁP DỤNG | Không dùng cookie xác thực. Chat/ASR chỉ POST; Origin cùng trang local bắt buộc, HTTP thật trả 403 cho origin lạ hoặc thiếu origin. | Không có phiên cookie hoặc thao tác thay đổi dữ liệu qua GET cần CSRF token. Kiểm tra Origin vẫn bảo vệ tác vụ tốn tài nguyên. |
+| 15 | Kiểm tra CORS | ĐẠT | Host chỉ localhost/127.0.0.1 đúng cổng; POST có danh sách Origin cố định; không có Access-Control-Allow-Origin tùy ý/wildcard. HTTP thật kiểm tra host/origin bị từ chối. | Browser gửi `credentials:'omit'`; phản hồi lỗi cũng không bật CORS. |
+| 16 | Bật HTTPS | KHÔNG ÁP DỤNG | Đây là push nhánh archive, không triển khai. Backend/preview chỉ listen loopback HTTP; cấu hình Pages đang chạy main có HTTPS enforced. | Không có tên miền/reverse proxy/chứng chỉ backend public mới để xác minh; không tuyên bố đã xác minh production cho mã mới. |
+| 17 | Kiểm tra security headers | ĐẠT | HTTP thật trên 8831/8832 có CSP, nosniff, Referrer-Policy và X-Frame-Options DENY; browser tests và 6 ca gia sư thật hoạt động dưới chính sách. | Security headers được bổ sung cho cả từ chối Host/Origin, body lớn, rate limit và lỗi chung. |
+| 18 | Bảo vệ cookie | KHÔNG ÁP DỤNG | Nguồn không tạo cookie phiên/nhạy cảm; HTTP thật và unit tests xác minh không có Set-Cookie. | Không có cookie đăng nhập, Domain/Path, vòng đời phiên hay đăng xuất để kiểm tra. |
+| 19 | Tắt chế độ debug | ĐẠT | FastAPI không bật debug; docs/redoc/openapi tắt; access_log=False; lỗi model/ASR trả thông báo chung, không trả traceback. HTTP thật /docs, /openapi.json bị từ chối. | Log không ghi prompt/audio/secret; API lỗi giữ headers. Chế độ experimental là nhãn chất lượng model, không bật debugger. |
+| 20 | Cấu hình production và kiểm thử bản phát hành | ĐẠT | Đã xác minh push không có trigger deploy từ archive; 24 Python tests, npm test, bootstrap/pip check, GPU smoke/resume, 6 ca live và checkout mới đều qua. npm audit: 0; pip-audit: 75 gói, 0 findings, 0 skipped sau chuẩn hóa hậu tố CUDA chỉ để tra advisory. | Nâng thư viện bị cảnh báo và sửa tương thích tokenizer/warmup; PyTorch 2.14.1+cu130, Transformers 5.19.0, FastAPI 0.142.4/Starlette 1.7.0. Không còn mục áp dụng bị chặn trong phạm vi push nguồn này. |
+
+Kết luận: **ĐỦ ĐIỀU KIỆN cho commit và push mã nguồn lên `archive/year2`**. Các mục không áp dụng có lý do theo kiến trúc local và phạm vi hành động. Kết luận này không cấp chứng nhận triển khai backend AI public hoặc nghiệm thu chất lượng gia sư.
+
+Kiểm tra thực tế đã chạy:
+
+- Gitleaks 8.30.1: nguồn trong index, staged, lịch sử `--all`; chạy lại cho toàn bộ candidate và lịch sử sau commit trước push. Kết quả được che bí mật khi ghi log.
+- `npm test`: toàn bộ chuỗi browser/multi-tab/translation/tutor/tutor-flow/voice, 73 nhóm PASS được ghi trong log. `npm audit --json`: 0 cảnh báo.
+- Python unittest discovery: 24 tests; bootstrap `run.py setup` và `pip check`: exit 0. Kiểm tra cú pháp và `git diff --cached --check` cũng qua.
+- GPU thật: smoke 10 bước, loss hữu hạn, adapter đổi, lưu/nạp lại và sinh văn bản; profile accumulation 16, validation 52 mẫu, khôi phục checkpoint từ bước 1 đến bước 2. Lượt QA có thư mục riêng, không ghi đè adapter/bảng chấm cũ.
+- Edge/API với adapter `20261004-101138-train-254410`: 6 ca tương tác thật; xem ảnh 375/1440 px. 7 kiểm tra HTTP preview và 18 kiểm tra HTTP tutor cho headers/host/origin/đường dẫn/đầu vào/upload đều qua.
+- Export bằng Git checkout-index sang thư mục mới: manifest/hash và số lượng 416/52/52 hợp lệ. `.gitattributes` giữ nguyên byte dữ liệu đã có hash, kể cả CRLF; vẫn kiểm tra khoảng trắng thừa thực sự.
+- `pip-audit` kiểm tra toàn bộ lock thực tế sau nâng cấp. Catalog không nhận hậu tố vendor `+cu130`, nên chỉ thay `torch==2.14.1+cu130` bằng `torch==2.14.1` trong bản sao dành cho tra advisory; không bỏ qua PyTorch hoặc thay bản cài trên máy. Kết quả 75 gói, 0 cảnh báo, 0 gói bị bỏ qua. Nguồn bản PyTorch: [release chính thức](https://github.com/pytorch/pytorch/releases/tag/v2.14.1) và wheel CUDA 13.0 trên download.pytorch.org.
+
+Bằng chứng đầy đủ nằm trong thư mục `test-results/` local ngoài Git; file JSON đi kèm ghi SHA-256 của từng bằng chứng và Git blob của mã được kiểm tra. Log thô, hội thoại thử, ảnh, model/cache/venv/runs không được push.
+
+Giới hạn còn lại: quét advisory theo phiên bản package không thay thế kiểm toán mọi binary native đi kèm. GPU được kiểm tra trên RTX 4050 6 GB, Python 3.12.6, driver 610.78; không chứng nhận các tổ hợp máy khác. Micro vật lý và nghiệm thu chất lượng model chưa được thực hiện; gia sư vẫn có nhãn thử nghiệm. Các kiểm tra này không tuyên bố an toàn tuyệt đối.
+
+Hành động tiếp theo: tạo commit, đối chiếu lại Git blob/bằng chứng và quét candidate cuối; báo cáo đủ 20 mục trước push; push thường lên `archive/year2`, rồi xác minh SHA remote, main và nguồn Pages. Mọi thay đổi mã/cấu hình sau kiểm tra phải được kiểm tra lại ở các mục bị ảnh hưởng.

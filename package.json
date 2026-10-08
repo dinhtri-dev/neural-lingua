@@ -4,7 +4,7 @@
   "private": true,
   "description": "Static VOA learning companion; Node is used only for tests.",
   "scripts": {
-    "test": "node tests/browser.cjs && node tests/multi-tab.cjs && node tests/translation-boundaries.cjs && node tests/voice.cjs"
+    "test": "node tests/browser.cjs && node tests/multi-tab.cjs && node tests/translation-boundaries.cjs && node tests/tutor.cjs && node tests/tutor-flow.cjs && node tests/voice.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
