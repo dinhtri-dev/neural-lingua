@@ -36,6 +36,7 @@ def setup(server=False):
     result = subprocess.run([str(PYTHON), '-c', check], capture_output=True, text=True, cwd=ROOT)
     if result.returncode or json.loads(result.stdout) != expected:
         print('Cài bộ thư viện cố định (lần đầu có thể tải vài GB)…', flush=True)
+        run([str(PYTHON), '-m', 'pip', 'install', '--disable-pip-version-check', '--upgrade', 'pip==26.2'])
         run([str(PYTHON), '-m', 'pip', 'install', '--disable-pip-version-check', 'torch==2.14.1+cu130', '--index-url', 'https://download.pytorch.org/whl/cu130'])
         for filename in requirement_files:
             run([str(PYTHON), '-m', 'pip', 'install', '--disable-pip-version-check', '-r', filename])

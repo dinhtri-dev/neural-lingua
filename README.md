@@ -20,6 +20,26 @@ Mở http://127.0.0.1:8831. Server chỉ nghe trên máy của bạn, giới h�
 
 ## Cách học
 
+### Lộ trình cá nhân hóa
+
+Trên Lộ trình, chọn **Kiểm tra đầu vào · 15 câu**. Bài gồm từ vựng, mẫu câu
+và đọc tình huống, 3 câu thăm dò mỗi chặng, khoảng 5–7 phút. Chọn **Chưa biết**
+nếu cần. Chặng đầu dưới 2/3 câu đúng là mốc bắt đầu được gợi ý; nếu tất cả
+chặng đều đạt, bắt đầu bài 41 để xác nhận bằng kết quả học. Đây là mẫu nhỏ,
+không đánh giá nghe/nói và không chứng nhận trình độ CEFR.
+
+Dashboard giải thích bài được chọn, hiển thị điểm theo nhóm câu hỏi và tối đa
+5 bài tiếp theo. Lần làm bài mới nhất dưới 4/5 sẽ ưu tiên củng cố bài đó,
+kể cả khi điểm tốt nhất trước đây là 5/5; điểm tốt nhất và trạng thái hoàn thành
+không bị xóa. Khi làm lại đạt và đánh dấu hoàn thành, gợi ý chuyển sang bài tiếp.
+Bạn có thể bỏ qua đầu vào, chọn bất kỳ bài nào hoặc làm lại đầu vào để thay mốc.
+Làm lại đầu vào giữ lịch sử bài học nhưng bắt đầu một đợt gợi ý mới.
+
+Kết quả đầu vào và tối đa 5 lần làm gần nhất mỗi bài chỉ lưu trong trình duyệt,
+theo cùng tùy chọn **Lưu tiến độ**. Không gửi đáp án cho server hoặc dịch vụ AI.
+Tắt lưu giữ dữ liệu trong phiên đang mở; xóa dữ liệu học cũng xóa đầu vào và
+điểm theo nhóm. Dữ liệu tiến độ v1 cũ được đọc và giữ nguyên.
+
 1. Chọn bài trên Lộ trình hoặc tiếp tục bài đang học.
 2. Bấm Mở video VOA; bấm nút phát trong trình phát gốc. Chọn thêm Luyện nói/Phát âm khi có.
 3. Đọc từ, mẫu câu và làm hoạt động nói/viết. Lưu từ để ôn bằng flashcard.
