@@ -1,12 +1,5 @@
 // Dedicated CPU worker: recordings never leave this worker/browser.
-import {pipeline, env} from '../voice-assets/vendor/transformers.min.js';
-
-env.allowRemoteModels = false;
-env.allowLocalModels = true;
-env.localModelPath = new URL('../voice-assets/models/', import.meta.url).href;
-env.backends.onnx.wasm.wasmPaths = new URL('../voice-assets/vendor/', import.meta.url).href;
-env.backends.onnx.wasm.numThreads = 1;
-env.backends.onnx.wasm.proxy = false;
+import {verifiedVoiceRuntime} from './voice-integrity.js';
 let recognizer = null, busy = false;
 const languages = new Set(['auto', 'vi', 'en', 'fr', 'es', 'ja', 'ko', 'zh']);
 
@@ -17,6 +10,10 @@ self.addEventListener('message', async ({data}) => {
   busy = true;
   try {
     if (!recognizer) {
+      const {pipeline,env}=await verifiedVoiceRuntime();
+      env.allowRemoteModels=false;env.allowLocalModels=true;
+      env.localModelPath=new URL('../voice-assets/models/',import.meta.url).href;
+      env.backends.onnx.wasm.numThreads=1;env.backends.onnx.wasm.proxy=false;
       recognizer = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny', {
         device: 'wasm', dtype: 'q8',
         progress_callback: progress => {

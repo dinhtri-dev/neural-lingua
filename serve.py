@@ -5,7 +5,7 @@ from urllib.parse import unquote, urlsplit
 import argparse
 
 ROOT = Path(__file__).resolve().parent
-CSP = "default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self'; connect-src 'self' https://translate.googleapis.com; frame-src https://learningenglish.voanews.com; img-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'"
+CSP = "default-src 'none'; script-src 'self' blob: 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self'; connect-src 'self' https://translate.googleapis.com; frame-src https://learningenglish.voanews.com; img-src 'self'; media-src 'self' blob:; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'"
 class PreviewHandler(SimpleHTTPRequestHandler):
     server_version = "Neural-Lingua-Preview"
     sys_version = ""
@@ -48,7 +48,12 @@ class PreviewHandler(SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Neural-Lingua local preview')
     parser.add_argument('--port', type=int, default=8831)
+    parser.add_argument('--public', action='store_true', help='Serve only the verified dist build, without local AI')
     args = parser.parse_args()
+    if args.public:
+        from tools.build_public import verify_build
+        verify_build(ROOT / 'dist')
+        ROOT = ROOT / 'dist'
     if not 1024 <= args.port <= 65535: parser.error('Choose a port between 1024 and 65535')
     server = ThreadingHTTPServer(('127.0.0.1',args.port),PreviewHandler)
     print(f'Neural-Lingua: http://127.0.0.1:{args.port}',flush=True)

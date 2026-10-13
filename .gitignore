@@ -32,3 +32,6 @@ config.local.h
 test-results/
 playwright-report/
 voice-assets/
+dist/
+.public-build-*/
+.netlify/

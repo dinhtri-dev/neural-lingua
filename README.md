@@ -1,8 +1,22 @@
 # Neural-Lingua — Học tiếng Anh từng bước
 
 Người mới muốn tải, mở và sử dụng web: xem [hướng dẫn từng bước](README_SU_DUNG.md).
-Hướng dẫn này phân biệt bản học đầy đủ trên `archive/year2`, Pages trên `main`
-và các phần ghi âm/gia sư AI cần chuẩn bị riêng.
+Hướng dẫn này phân biệt bản online đầy đủ, bản local trên `archive/year2`, Pages
+cũ trên `main` và gia sư AI local tùy chọn.
+
+## Khóa học đầy đủ bằng một link
+
+Link bản online: [neural-lingua-course.netlify.app](https://neural-lingua-course.netlify.app/).
+Người học dùng điện thoại hoặc
+máy tính, không tải mã/cài Python/đăng nhập. Có đủ 52 bài, video VOA, quiz,
+flashcard, kiểm tra đầu vào, gợi ý học tiếp, dịch và Whisper chạy trong trình duyệt.
+Gia sư AI local không được triển khai lên Netlify. Pages cũ trên `main` không đổi.
+
+Tiến độ lưu riêng theo trình duyệt/thiết bị/origin; không tự chuyển dữ liệu local
+sang online và không xóa dữ liệu cũ. Micro chỉ bật sau **Ghi âm**; bộ nhận diện
+63 MiB chỉ tải sau **Chuẩn bị ghi âm**. Audio không upload. Netlify Free Legacy
+có hạn mức dùng chung team và có thể tạm dừng khi hết; không tự nâng gói.
+Xem [quy trình đóng gói và xuất bản](PUBLIC_DEPLOY.md).
 
 ## Gia sư AI local và bộ huấn luyện
 
@@ -74,9 +88,12 @@ node tests/live-media.cjs
 
 Playwright 1.62.1 chỉ là dependency phát triển. Bộ chức năng dùng dịch/giọng nói và video giả để kiểm soát lỗi, còn live-media.cjs bấm trình phát thật ở bài 1/13/26/39/52, kiểm tra thời gian phát tiến lên và hình đã giải mã. Screenshot/kết quả nằm trong test-results và không được commit. Browser test có thể dùng PLAYWRIGHT_PATH để chọn bộ Playwright đã cài, PREVIEW_URL để chọn cổng, QA_OUT_DIR để đổi thư mục kết quả.
 
-Bản bàn giao qua 44 nhóm kiểm thử (31 chức năng, 8 nhiều tab/bàn phím, 5 giới hạn dịch/HTML). Kiểm tra nguồn gồm 52 video chính và 104 video bổ sung qua HTTP; phát thật 5 bài trên với thời gian tiến lên và hình giải mã, không dùng HTTP 200 làm bằng chứng phát. Reviewer độc lập chấm lần lượt 7,8 → 7,9 → 8,9/10; dừng cải tiến ở lượt ba. Sáu đề xuất còn lại được ghi trong REVIEW_ROUNDS.md, chưa được triển khai hoặc tính như đã đạt.
+Lịch sử bản học ban đầu: 44 nhóm kiểm thử (31 chức năng, 8 nhiều tab/bàn phím, 5 giới hạn dịch/HTML). Kiểm tra nguồn gồm 52 video chính và 104 video bổ sung qua HTTP; phát thật 5 bài trên với thời gian tiến lên và hình giải mã, không dùng HTTP 200 làm bằng chứng phát. Reviewer của bản ban đầu chấm 7,8 → 7,9 → 8,9/10; các điểm này không chứng nhận bản public mới. Sáu đề xuất khi đó nằm trong REVIEW_ROUNDS.md. Kiểm thử/review public được ghi riêng khi nghiệm thu.
 
 ## Cấu trúc
+
+Kết quả review public: [PUBLIC_REVIEW_ROUNDS.md](PUBLIC_REVIEW_ROUNDS.md).
+Checklist bảo mật bản public: [PUBLIC_SECURITY_REVIEW.md](PUBLIC_SECURITY_REVIEW.md).
 
 - index.html, styles.css: khung giao diện và responsive.
 - js/: điều hướng, bài học, dữ liệu cục bộ và dịch.
@@ -88,4 +105,4 @@ Bản bàn giao qua 44 nhóm kiểm thử (31 chức năng, 8 nhiều tab/bàn p
 
 Dịch dùng endpoint Google thử nghiệm, có thể ngừng hoặc đổi. Chưa có cam kết chất lượng dịch. Nhận diện đã thử với model thật, audio mẫu qua micro giả lập trên Brave và Edge; Opera chưa thử trực tiếp. Model nhỏ có thể nhận sai, chưa kiểm tra giọng người dùng/độ chính xác tiếng Việt. Giọng đọc vẫn tùy browser/OS; không đánh giá phát âm. Trình phát/nguồn video ngoài có thể thay đổi. Server cục bộ không phải môi trường production.
 
-Bản mới nằm trên archive/year2. GitHub Pages tiếp tục dùng main; lần cập nhật này không triển khai website. Không force-push hoặc viết lại lịch sử. Xem SECURITY_REVIEW.md và REVIEW_ROUNDS.md để biết phạm vi kiểm tra và đánh giá độc lập.
+Bản đầy đủ nằm trên archive/year2. GitHub Pages tiếp tục dùng main; bản online mới dùng dự án Netlify riêng và chỉ xuất bản sau nghiệm thu. Không force-push hoặc viết lại lịch sử. SECURITY_REVIEW.md và REVIEW_ROUNDS.md ghi các bản trước, không thay thế báo cáo bảo mật/review public gắn với phiên bản mới.

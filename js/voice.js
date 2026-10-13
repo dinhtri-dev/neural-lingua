@@ -10,7 +10,7 @@ export function createVoiceInput({record, language, onText, onStart}) {
   const supported = !!(window.isSecureContext && navigator.mediaDevices?.getUserMedia && window.MediaRecorder && window.AudioContext && window.OfflineAudioContext && window.Worker && window.WebAssembly);
   const node = el('section', {'aria-label':'Nhận diện giọng nói trên thiết bị'}, notice,
     el('p', {class:'video-note'}, supported
-      ? 'Bấm Chuẩn bị ghi âm để tải model khoảng 63 MB; sau đó bấm Ghi âm và cho phép micro. Mỗi lượt tối đa 30 giây. Âm thanh được nhận diện ngay trong trình duyệt, không gửi ra ngoài và không lưu. Model có thể được lưu để dùng lại; chữ nhận diện chỉ được gửi tới Google nếu bạn bấm Dịch.'
+      ? 'Bấm Chuẩn bị ghi âm để tải bộ nhận diện khoảng 63 MiB (khoảng 66 MB); sau đó bấm Ghi âm và cho phép micro. Mỗi lượt tối đa 30 giây. Âm thanh được nhận diện ngay trong trình duyệt, không gửi ra ngoài và không lưu. Model có thể được lưu để dùng lại; chữ nhận diện chỉ được gửi tới Google nếu bạn bấm Dịch.'
       : 'Ghi âm cần trình duyệt hiện đại hỗ trợ micro và WebAssembly, chạy trên HTTPS hoặc địa chỉ local. Bạn vẫn có thể nhập văn bản.'),
     el('div', {class:'actions'}, cancel, remove));
   remove.hidden = !window.caches;

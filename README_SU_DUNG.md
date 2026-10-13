@@ -1,12 +1,14 @@
 # Neural-Lingua — hướng dẫn mở và sử dụng cho người mới
 
-Hướng dẫn chính dành cho **Windows 10/11**. Nếu bạn chỉ muốn học, không cần
-biết lập trình, không cần Git, Node.js, VS Code, GPU hoặc tài khoản đăng nhập.
-Cần trình duyệt hiện đại và Python 3.12 trở lên để mở bản web trên máy.
+Nếu bạn chỉ muốn học **bản online**, chỉ cần Internet và trình duyệt hiện đại
+trên điện thoại hoặc máy tính. Không cần tải mã, cài Python, Git, Node.js, VS Code,
+GPU hoặc đăng nhập. Các mục 2–4 dành riêng cho người muốn chạy bản local trên
+**Windows 10/11**, cần Python 3.12 trở lên.
 
-Hướng dẫn được đối chiếu với bản mã `15b1486`, ngày 13/10/2026.
+Hướng dẫn cập nhật cho bản public/local ngày 13/10/2026. Dùng link chính thức
+bên dưới; không dùng link preview để giữ tiến độ học lâu dài.
 
-Đi nhanh: [Tải mã nguồn](#2-tải-mã-nguồn-và-giải-nén) ·
+Đi nhanh: [Mở bản online](#1-chọn-đúng-bản-website) · [Tải mã nguồn](#2-tải-mã-nguồn-và-giải-nén) ·
 [Mở website](#4-mở-website-trên-máy) ·
 [Học và ôn từ](#5-bắt-đầu-học-và-dùng-lộ-trình-cá-nhân-hóa) ·
 [Dịch và ghi âm](#7-dịch-văn-bản-và-nghe-bản-dịch) ·
@@ -18,15 +20,42 @@ Hướng dẫn được đối chiếu với bản mã `15b1486`, ngày 13/10/20
 Bản đầy đủ nằm ở [GitHub — nhánh archive/year2](https://github.com/dinhtri-dev/neural-lingua/tree/archive/year2).
 Bản này có 52 bài, lộ trình cá nhân hóa, bài tập, flashcard và công cụ dịch.
 
-[Website online hiện tại](https://dinhtri-dev.github.io/neural-lingua/) vẫn chạy
+[Website GitHub Pages cũ](https://dinhtri-dev.github.io/neural-lingua/) vẫn chạy
 nhánh `main`, là bản dịch cũ. **Mở link online đó không phải là mở bản học 52 bài.**
-Để dùng bản đầy đủ, làm lần lượt mục 2 → 3 → 4 dưới đây.
+
+### Dùng bản online đầy đủ bằng một đường link
+
+1. Mở
+   [Neural-Lingua — khóa học 52 bài](https://neural-lingua-course.netlify.app/).
+2. Bạn sẽ thấy **Lộ trình**, **Bài học**, **Ôn tập** và **Dịch**. Không cần đăng nhập.
+3. Chọn **Kiểm tra đầu vào · 15 câu** nếu muốn gợi ý bài phù hợp, hoặc mở ngay
+   bất kỳ bài nào. Xem mục 5 để học và lưu từ; mục 7 để dịch.
+4. Chia sẻ một bài cụ thể bằng link như
+   [Bài 1](https://neural-lingua-course.netlify.app/#lesson/1) hoặc
+   [Bài 52](https://neural-lingua-course.netlify.app/#lesson/52).
+   Có thể tải lại trang hoặc lưu dấu trang và mở trực tiếp.
+5. Muốn ghi âm: vào **Dịch → Chuẩn bị ghi âm**, chờ tải khoảng **63 MiB**,
+   rồi bấm **Ghi âm** và cho phép micro. Không chạy lệnh chuẩn bị model ở mục 8.
+   Mỗi lượt tối đa 30 giây; kiểm tra chữ nhận diện trước khi bấm **Dịch**.
+
+Gia sư AI thử nghiệm chỉ có ở bản local, không có nút gia sư không hoạt động
+trong bản online. Tiến độ/từ/đầu vào lưu theo **trình duyệt, thiết bị và địa chỉ
+web**; không có đồng bộ. Dữ liệu ở localhost hoặc Pages cũ không bị xóa nhưng
+không tự chuyển sang link Netlify. Link preview cũng có bộ lưu riêng.
+
+Netlify đang dùng **Free Legacy**, không mua tên miền/nâng gói. Hạn mức dùng
+chung cả team; nếu hết hạn mức, trang có thể tạm dừng. Video VOA, dịch Google và
+trình duyệt cũng có thể gặp lỗi riêng; có thể thử lại hoặc nhập văn bản khi micro
+không được hỗ trợ. Không có cam kết hoạt động liên tục.
+
+Nếu muốn chạy đầy đủ trên máy với gia sư AI tùy chọn, làm mục 2 → 3 → 4.
 
 | Bạn muốn dùng | Cần chuẩn bị |
 |---|---|
-| Học 52 bài, kiểm tra đầu vào, quiz, flashcard | Mã nguồn và Python; không cần GPU hoặc cài thư viện Python |
+| Học 52 bài online, kiểm tra đầu vào, quiz, flashcard | Link Netlify, trình duyệt và Internet |
+| Học 52 bài local | Mã nguồn và Python; không cần GPU hoặc cài thư viện Python |
 | Xem video VOA, dịch văn bản | Cần thêm Internet |
-| Ghi âm trong công cụ Dịch | Chuẩn bị model trình duyệt một lần theo mục 8 |
+| Ghi âm trong công cụ Dịch | Online: bấm Chuẩn bị ghi âm; local: chuẩn bị model theo mục 8 |
 | Gia sư AI Anh–Việt | Cài riêng, cần GPU NVIDIA phù hợp và adapter local; xem mục 9 |
 
 ## 2. Tải mã nguồn và giải nén
@@ -362,7 +391,8 @@ của mình theo mục 2–4. Không gửi riêng link `127.0.0.1`, không chép
 `.venv` hay dữ liệu học cá nhân của bạn cho họ.
 
 Muốn ai cũng mở bản đầy đủ bằng một link online cần một lần triển khai riêng.
-`serve.py` chỉ nghe máy local, không phải cấu hình hosting/public. Hướng dẫn
+`serve.py` chỉ nghe máy local, không phải máy chủ production. Bản online dùng
+gói riêng theo [PUBLIC_DEPLOY.md](PUBLIC_DEPLOY.md). Hướng dẫn
 này không hướng dẫn mở cổng hoặc bỏ các kiểm tra bảo mật để biến máy thành server.
 
 Nếu dùng macOS/Linux: phần web thuần không cần GPU; dùng Python 3.12+ và lệnh
