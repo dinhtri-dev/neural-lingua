@@ -1,5 +1,9 @@
 # Neural-Lingua — Học tiếng Anh từng bước
 
+Người mới muốn tải, mở và sử dụng web: xem [hướng dẫn từng bước](README_SU_DUNG.md).
+Hướng dẫn này phân biệt bản học đầy đủ trên `archive/year2`, Pages trên `main`
+và các phần ghi âm/gia sư AI cần chuẩn bị riêng.
+
 ## Gia sư AI local và bộ huấn luyện
 
 Mở `ai-tutor/neural-lingua-ai.code-workspace` bằng VS Code. Bộ đi kèm có 520 mẫu, QLoRA Qwen3-1.7B, kiểm tra GPU và lưu adapter tự động. Xem [hướng dẫn AI](ai-tutor/README.md). Gia sư/ASR dùng backend local riêng. Máy hiện tại có lượt train đầy đủ `20261004-101138-train-254410` và 156 phản hồi so sánh; bảng chấm chưa được điền nên adapter vẫn là thử nghiệm. Chọn **Thử gia sư (thử nghiệm, chưa nghiệm thu)** rồi F5 để dùng.
